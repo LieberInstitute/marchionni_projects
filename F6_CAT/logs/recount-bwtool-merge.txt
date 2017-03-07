@@ -1,0 +1,2308 @@
+**** Job starts ****
+Mon Mar  6 15:19:57 EST 2017
+**** JHPCE info ****
+User: lcollado
+Job id: 9953604
+Job name: recount-bwtool-merge.2017-02-25
+Hostname: compute-076
+Using the following user library: ~/R/x86_64-pc-linux-gnu-library/3.3.x
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colnames, do.call,
+    duplicated, eval, evalq, Filter, Find, get, grep, grepl, intersect,
+    is.unsorted, lapply, lengths, Map, mapply, match, mget, order,
+    paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind,
+    Reduce, rownames, sapply, setdiff, sort, table, tapply, union,
+    unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:base’:
+
+    colMeans, colSums, expand.grid, rowMeans, rowSums
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: lattice
+Loading required package: survival
+Loading required package: Formula
+Loading required package: ggplot2
+
+Attaching package: ‘Hmisc’
+
+The following objects are masked from ‘package:Biobase’:
+
+    combine, contents
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    combine
+
+The following objects are masked from ‘package:base’:
+
+    format.pval, round.POSIXt, trunc.POSIXt, units
+
+2017-03-06 15:20:05 processing rse files
+2017-03-06 15:20:05 locating files
+2017-03-06 15:20:05 loading individual RSE files
+2017-03-06 15:20:05 loading file ./rse_DRP000366.Rdata
+2017-03-06 15:20:09 loading file ./rse_DRP000425.Rdata
+2017-03-06 15:20:11 loading file ./rse_DRP000464.Rdata
+2017-03-06 15:20:13 loading file ./rse_DRP000499.Rdata
+2017-03-06 15:20:16 loading file ./rse_DRP000527.Rdata
+2017-03-06 15:20:18 loading file ./rse_DRP000622.Rdata
+2017-03-06 15:20:20 loading file ./rse_DRP000665.Rdata
+2017-03-06 15:20:22 loading file ./rse_DRP000929.Rdata
+2017-03-06 15:20:24 loading file ./rse_DRP000987.Rdata
+2017-03-06 15:20:27 loading file ./rse_DRP001048.Rdata
+2017-03-06 15:20:29 loading file ./rse_DRP001055.Rdata
+2017-03-06 15:20:31 loading file ./rse_DRP001149.Rdata
+2017-03-06 15:20:33 loading file ./rse_DRP001150.Rdata
+2017-03-06 15:20:35 loading file ./rse_DRP001194.Rdata
+2017-03-06 15:20:36 loading file ./rse_DRP001219.Rdata
+2017-03-06 15:20:39 loading file ./rse_DRP001220.Rdata
+2017-03-06 15:20:40 loading file ./rse_DRP001280.Rdata
+2017-03-06 15:20:42 loading file ./rse_DRP001358.Rdata
+2017-03-06 15:20:46 loading file ./rse_DRP001797.Rdata
+2017-03-06 15:20:51 loading file ./rse_DRP001919.Rdata
+2017-03-06 15:20:52 loading file ./rse_DRP002380.Rdata
+2017-03-06 15:20:54 merging RSE objects (group)
+2017-03-06 15:20:59 loading file ./rse_DRP002435.Rdata
+2017-03-06 15:21:03 loading file ./rse_DRP002586.Rdata
+2017-03-06 15:21:06 loading file ./rse_DRP002623.Rdata
+2017-03-06 15:21:08 loading file ./rse_DRP002625.Rdata
+2017-03-06 15:21:09 loading file ./rse_DRP002667.Rdata
+2017-03-06 15:21:12 loading file ./rse_DRP002672.Rdata
+2017-03-06 15:21:13 loading file ./rse_DRP002712.Rdata
+2017-03-06 15:21:15 loading file ./rse_DRP002721.Rdata
+2017-03-06 15:21:16 loading file ./rse_DRP002835.Rdata
+2017-03-06 15:21:18 loading file ./rse_DRP002851.Rdata
+2017-03-06 15:21:20 loading file ./rse_DRP002860.Rdata
+2017-03-06 15:21:22 loading file ./rse_ERP000546.Rdata
+2017-03-06 15:21:24 loading file ./rse_ERP000573.Rdata
+2017-03-06 15:21:25 loading file ./rse_ERP000619.Rdata
+2017-03-06 15:21:27 loading file ./rse_ERP000710.Rdata
+2017-03-06 15:21:29 loading file ./rse_ERP000787.Rdata
+2017-03-06 15:21:30 loading file ./rse_ERP000799.Rdata
+2017-03-06 15:21:32 loading file ./rse_ERP000959.Rdata
+2017-03-06 15:21:34 loading file ./rse_ERP000992.Rdata
+2017-03-06 15:21:35 loading file ./rse_ERP001115.Rdata
+2017-03-06 15:21:37 merging RSE objects (group)
+2017-03-06 15:21:40 loading file ./rse_ERP001304.Rdata
+2017-03-06 15:21:42 loading file ./rse_ERP001317.Rdata
+2017-03-06 15:21:45 loading file ./rse_ERP001344.Rdata
+2017-03-06 15:21:47 loading file ./rse_ERP001458.Rdata
+2017-03-06 15:21:48 loading file ./rse_ERP001574.Rdata
+2017-03-06 15:21:50 loading file ./rse_ERP001782.Rdata
+2017-03-06 15:21:52 loading file ./rse_ERP001828.Rdata
+2017-03-06 15:21:53 loading file ./rse_ERP001895.Rdata
+2017-03-06 15:21:55 loading file ./rse_ERP001908.Rdata
+2017-03-06 15:21:57 loading file ./rse_ERP001942.Rdata
+2017-03-06 15:22:03 loading file ./rse_ERP001948.Rdata
+2017-03-06 15:22:05 loading file ./rse_ERP001971.Rdata
+2017-03-06 15:22:07 loading file ./rse_ERP002021.Rdata
+2017-03-06 15:22:09 loading file ./rse_ERP002045.Rdata
+2017-03-06 15:22:11 loading file ./rse_ERP002049.Rdata
+2017-03-06 15:22:12 loading file ./rse_ERP002063.Rdata
+2017-03-06 15:22:14 loading file ./rse_ERP002075.Rdata
+2017-03-06 15:22:16 loading file ./rse_ERP002232.Rdata
+2017-03-06 15:22:18 loading file ./rse_ERP002414.Rdata
+2017-03-06 15:22:19 loading file ./rse_ERP002588.Rdata
+2017-03-06 15:22:21 merging RSE objects (group)
+2017-03-06 15:22:27 loading file ./rse_ERP003259.Rdata
+2017-03-06 15:22:29 loading file ./rse_ERP003460.Rdata
+2017-03-06 15:22:31 loading file ./rse_ERP003467.Rdata
+2017-03-06 15:22:33 loading file ./rse_ERP003471.Rdata
+2017-03-06 15:22:35 loading file ./rse_ERP003495.Rdata
+2017-03-06 15:22:36 loading file ./rse_ERP003536.Rdata
+2017-03-06 15:22:38 loading file ./rse_ERP003613.Rdata
+2017-03-06 15:22:41 loading file ./rse_ERP003789.Rdata
+2017-03-06 15:22:43 loading file ./rse_ERP003791.Rdata
+2017-03-06 15:22:44 loading file ./rse_ERP003815.Rdata
+2017-03-06 15:22:46 loading file ./rse_ERP003917.Rdata
+2017-03-06 15:22:49 loading file ./rse_ERP003933.Rdata
+2017-03-06 15:22:50 loading file ./rse_ERP003984.Rdata
+2017-03-06 15:22:52 loading file ./rse_ERP004006.Rdata
+2017-03-06 15:22:54 loading file ./rse_ERP004043.Rdata
+2017-03-06 15:22:56 loading file ./rse_ERP004062.Rdata
+2017-03-06 15:22:58 loading file ./rse_ERP004078.Rdata
+2017-03-06 15:23:03 loading file ./rse_ERP004094.Rdata
+2017-03-06 15:23:05 loading file ./rse_ERP004151.Rdata
+2017-03-06 15:23:06 loading file ./rse_ERP004209.Rdata
+2017-03-06 15:23:08 merging RSE objects (group)
+2017-03-06 15:23:10 loading file ./rse_ERP004211.Rdata
+2017-03-06 15:23:12 loading file ./rse_ERP004219.Rdata
+2017-03-06 15:23:14 loading file ./rse_ERP004269.Rdata
+2017-03-06 15:23:15 loading file ./rse_ERP004270.Rdata
+2017-03-06 15:23:17 loading file ./rse_ERP004298.Rdata
+2017-03-06 15:23:19 loading file ./rse_ERP004352.Rdata
+2017-03-06 15:23:21 loading file ./rse_ERP004375.Rdata
+2017-03-06 15:23:23 loading file ./rse_ERP004399.Rdata
+2017-03-06 15:23:25 loading file ./rse_ERP004402.Rdata
+2017-03-06 15:23:27 loading file ./rse_ERP004573.Rdata
+2017-03-06 15:23:29 loading file ./rse_ERP004578.Rdata
+2017-03-06 15:23:31 loading file ./rse_ERP004592.Rdata
+2017-03-06 15:23:32 loading file ./rse_ERP004617.Rdata
+2017-03-06 15:23:34 loading file ./rse_ERP004682.Rdata
+2017-03-06 15:23:36 loading file ./rse_ERP004683.Rdata
+2017-03-06 15:23:38 loading file ./rse_ERP004684.Rdata
+2017-03-06 15:23:40 loading file ./rse_ERP004697.Rdata
+2017-03-06 15:23:42 loading file ./rse_ERP005189.Rdata
+2017-03-06 15:23:43 loading file ./rse_ERP005274.Rdata
+2017-03-06 15:23:45 loading file ./rse_ERP005301.Rdata
+2017-03-06 15:23:47 merging RSE objects (group)
+2017-03-06 15:23:50 loading file ./rse_ERP005426.Rdata
+2017-03-06 15:23:52 loading file ./rse_ERP005583.Rdata
+2017-03-06 15:23:54 loading file ./rse_ERP005641.Rdata
+2017-03-06 15:23:57 loading file ./rse_ERP005938.Rdata
+2017-03-06 15:23:59 loading file ./rse_ERP005953.Rdata
+2017-03-06 15:24:01 loading file ./rse_ERP006028.Rdata
+2017-03-06 15:24:03 loading file ./rse_ERP006077.Rdata
+2017-03-06 15:24:05 loading file ./rse_ERP006097.Rdata
+2017-03-06 15:24:07 loading file ./rse_ERP006185.Rdata
+2017-03-06 15:24:09 loading file ./rse_ERP006200.Rdata
+2017-03-06 15:24:10 loading file ./rse_ERP006215.Rdata
+2017-03-06 15:24:12 loading file ./rse_ERP006216.Rdata
+2017-03-06 15:24:14 loading file ./rse_ERP006368.Rdata
+2017-03-06 15:24:16 loading file ./rse_ERP006533.Rdata
+2017-03-06 15:24:18 loading file ./rse_ERP006538.Rdata
+2017-03-06 15:24:20 loading file ./rse_ERP006577.Rdata
+2017-03-06 15:24:22 loading file ./rse_ERP006650.Rdata
+2017-03-06 15:24:23 loading file ./rse_ERP006662.Rdata
+2017-03-06 15:24:25 loading file ./rse_ERP006686.Rdata
+2017-03-06 15:24:27 loading file ./rse_ERP006696.Rdata
+2017-03-06 15:24:29 merging RSE objects (group)
+2017-03-06 15:24:35 loading file ./rse_ERP006823.Rdata
+2017-03-06 15:24:37 loading file ./rse_ERP006872.Rdata
+2017-03-06 15:24:39 loading file ./rse_ERP006964.Rdata
+2017-03-06 15:24:40 loading file ./rse_ERP007008.Rdata
+2017-03-06 15:24:42 loading file ./rse_ERP007014.Rdata
+2017-03-06 15:24:44 loading file ./rse_ERP007022.Rdata
+2017-03-06 15:24:45 loading file ./rse_ERP007109.Rdata
+2017-03-06 15:24:47 loading file ./rse_ERP007111.Rdata
+2017-03-06 15:24:50 loading file ./rse_ERP007170.Rdata
+2017-03-06 15:24:52 loading file ./rse_ERP007180.Rdata
+2017-03-06 15:24:53 loading file ./rse_ERP007185.Rdata
+2017-03-06 15:24:56 loading file ./rse_ERP008445.Rdata
+2017-03-06 15:24:57 loading file ./rse_ERP008458.Rdata
+2017-03-06 15:24:59 loading file ./rse_ERP008483.Rdata
+2017-03-06 15:25:01 loading file ./rse_ERP008492.Rdata
+2017-03-06 15:25:03 loading file ./rse_ERP008520.Rdata
+2017-03-06 15:25:04 loading file ./rse_ERP008608.Rdata
+2017-03-06 15:25:07 loading file ./rse_ERP008682.Rdata
+2017-03-06 15:25:08 loading file ./rse_ERP008803.Rdata
+2017-03-06 15:25:10 loading file ./rse_ERP008834.Rdata
+2017-03-06 15:25:12 merging RSE objects (group)
+2017-03-06 15:25:15 loading file ./rse_ERP008967.Rdata
+2017-03-06 15:25:18 loading file ./rse_ERP008992.Rdata
+2017-03-06 15:25:20 loading file ./rse_ERP009022.Rdata
+2017-03-06 15:25:22 loading file ./rse_ERP009050.Rdata
+2017-03-06 15:25:23 loading file ./rse_ERP009263.Rdata
+2017-03-06 15:25:25 loading file ./rse_ERP009282.Rdata
+2017-03-06 15:25:27 loading file ./rse_ERP009283.Rdata
+2017-03-06 15:25:29 loading file ./rse_ERP009295.Rdata
+2017-03-06 15:25:30 loading file ./rse_ERP009437.Rdata
+2017-03-06 15:25:35 loading file ./rse_ERP009514.Rdata
+2017-03-06 15:25:36 loading file ./rse_ERP009612.Rdata
+2017-03-06 15:25:38 loading file ./rse_ERP009768.Rdata
+2017-03-06 15:25:40 loading file ./rse_ERP009841.Rdata
+2017-03-06 15:25:42 loading file ./rse_ERP009913.Rdata
+2017-03-06 15:25:44 loading file ./rse_ERP009935.Rdata
+2017-03-06 15:25:45 loading file ./rse_ERP009992.Rdata
+2017-03-06 15:25:47 loading file ./rse_ERP010003.Rdata
+2017-03-06 15:25:49 loading file ./rse_ERP010065.Rdata
+2017-03-06 15:25:51 loading file ./rse_ERP010082.Rdata
+2017-03-06 15:25:53 loading file ./rse_ERP010136.Rdata
+2017-03-06 15:25:54 loading file ./rse_ERP010142.Rdata
+2017-03-06 15:25:56 merging RSE objects (group)
+2017-03-06 15:25:59 loading file ./rse_ERP010177.Rdata
+2017-03-06 15:26:01 loading file ./rse_ERP010227.Rdata
+2017-03-06 15:26:03 loading file ./rse_ERP010372.Rdata
+2017-03-06 15:26:05 loading file ./rse_ERP010500.Rdata
+2017-03-06 15:26:06 loading file ./rse_ERP010786.Rdata
+2017-03-06 15:26:08 loading file ./rse_ERP010791.Rdata
+2017-03-06 15:26:11 loading file ./rse_ERP010889.Rdata
+2017-03-06 15:26:13 loading file ./rse_ERP010929.Rdata
+2017-03-06 15:26:15 loading file ./rse_ERP010930.Rdata
+2017-03-06 15:26:17 loading file ./rse_ERP011000.Rdata
+2017-03-06 15:26:18 loading file ./rse_ERP011264.Rdata
+2017-03-06 15:26:20 loading file ./rse_ERP011282.Rdata
+2017-03-06 15:26:22 loading file ./rse_ERP011301.Rdata
+2017-03-06 15:26:24 loading file ./rse_ERP011411.Rdata
+2017-03-06 15:26:26 loading file ./rse_ERP011490.Rdata
+2017-03-06 15:26:28 loading file ./rse_ERP012063.Rdata
+2017-03-06 15:26:30 loading file ./rse_ERP012180.Rdata
+2017-03-06 15:26:31 loading file ./rse_ERP012188.Rdata
+2017-03-06 15:26:33 loading file ./rse_ERP012633.Rdata
+2017-03-06 15:26:35 loading file ./rse_ERP012768.Rdata
+2017-03-06 15:26:37 merging RSE objects (group)
+2017-03-06 15:26:40 loading file ./rse_ERP012838.Rdata
+2017-03-06 15:26:42 loading file ./rse_ERP013303.Rdata
+2017-03-06 15:26:43 loading file ./rse_ERP013422.Rdata
+2017-03-06 15:26:45 loading file ./rse_ERP013713.Rdata
+2017-03-06 15:26:47 loading file ./rse_SRP000542.Rdata
+2017-03-06 15:26:49 loading file ./rse_SRP000543.Rdata
+2017-03-06 15:26:50 loading file ./rse_SRP000546.Rdata
+2017-03-06 15:26:52 loading file ./rse_SRP000599.Rdata
+2017-03-06 15:26:54 loading file ./rse_SRP000617.Rdata
+2017-03-06 15:26:56 loading file ./rse_SRP000729.Rdata
+2017-03-06 15:26:57 loading file ./rse_SRP000762.Rdata
+2017-03-06 15:26:59 loading file ./rse_SRP000931.Rdata
+2017-03-06 15:27:01 loading file ./rse_SRP000941.Rdata
+2017-03-06 15:27:05 loading file ./rse_SRP000996.Rdata
+2017-03-06 15:27:07 loading file ./rse_SRP001313.Rdata
+2017-03-06 15:27:09 loading file ./rse_SRP001349.Rdata
+2017-03-06 15:27:10 loading file ./rse_SRP001371.Rdata
+2017-03-06 15:27:15 loading file ./rse_SRP001381.Rdata
+2017-03-06 15:27:17 loading file ./rse_SRP001462.Rdata
+2017-03-06 15:27:19 loading file ./rse_SRP001523.Rdata
+2017-03-06 15:27:20 merging RSE objects (group)
+2017-03-06 15:27:23 loading file ./rse_SRP001540.Rdata
+2017-03-06 15:27:25 loading file ./rse_SRP001558.Rdata
+2017-03-06 15:27:27 loading file ./rse_SRP001563.Rdata
+2017-03-06 15:27:29 loading file ./rse_SRP001758.Rdata
+2017-03-06 15:27:31 loading file ./rse_SRP001893.Rdata
+2017-03-06 15:27:32 loading file ./rse_SRP001997.Rdata
+2017-03-06 15:27:34 loading file ./rse_SRP002001.Rdata
+2017-03-06 15:27:36 loading file ./rse_SRP002079.Rdata
+2017-03-06 15:27:38 loading file ./rse_SRP002105.Rdata
+2017-03-06 15:27:40 loading file ./rse_SRP002126.Rdata
+2017-03-06 15:27:42 loading file ./rse_SRP002128.Rdata
+2017-03-06 15:27:43 loading file ./rse_SRP002184.Rdata
+2017-03-06 15:27:45 loading file ./rse_SRP002220.Rdata
+2017-03-06 15:27:47 loading file ./rse_SRP002245.Rdata
+2017-03-06 15:27:49 loading file ./rse_SRP002272.Rdata
+2017-03-06 15:27:51 loading file ./rse_SRP002274.Rdata
+2017-03-06 15:27:53 loading file ./rse_SRP002278.Rdata
+2017-03-06 15:27:54 loading file ./rse_SRP002306.Rdata
+2017-03-06 15:27:56 loading file ./rse_SRP002326.Rdata
+2017-03-06 15:27:58 loading file ./rse_SRP002487.Rdata
+2017-03-06 15:28:00 merging RSE objects (group)
+2017-03-06 15:28:03 loading file ./rse_SRP002543.Rdata
+2017-03-06 15:28:04 loading file ./rse_SRP002605.Rdata
+2017-03-06 15:28:06 loading file ./rse_SRP002621.Rdata
+2017-03-06 15:28:08 loading file ./rse_SRP002628.Rdata
+2017-03-06 15:28:10 loading file ./rse_SRP002640.Rdata
+2017-03-06 15:28:12 loading file ./rse_SRP002789.Rdata
+2017-03-06 15:28:14 loading file ./rse_SRP002861.Rdata
+2017-03-06 15:28:15 loading file ./rse_SRP002881.Rdata
+2017-03-06 15:28:17 loading file ./rse_SRP002915.Rdata
+2017-03-06 15:28:19 loading file ./rse_SRP002958.Rdata
+2017-03-06 15:28:21 loading file ./rse_SRP003021.Rdata
+2017-03-06 15:28:22 loading file ./rse_SRP003227.Rdata
+2017-03-06 15:28:24 loading file ./rse_SRP003276.Rdata
+2017-03-06 15:28:26 loading file ./rse_SRP003611.Rdata
+2017-03-06 15:28:28 loading file ./rse_SRP003637.Rdata
+2017-03-06 15:28:29 loading file ./rse_SRP003672.Rdata
+2017-03-06 15:28:31 loading file ./rse_SRP003726.Rdata
+2017-03-06 15:28:33 loading file ./rse_SRP003754.Rdata
+2017-03-06 15:28:35 loading file ./rse_SRP003901.Rdata
+2017-03-06 15:28:37 loading file ./rse_SRP003902.Rdata
+2017-03-06 15:28:39 merging RSE objects (group)
+2017-03-06 15:28:41 loading file ./rse_SRP004042.Rdata
+2017-03-06 15:28:42 loading file ./rse_SRP004637.Rdata
+2017-03-06 15:28:44 loading file ./rse_SRP004837.Rdata
+2017-03-06 15:28:46 loading file ./rse_SRP004847.Rdata
+2017-03-06 15:28:48 loading file ./rse_SRP004965.Rdata
+2017-03-06 15:28:49 loading file ./rse_SRP005129.Rdata
+2017-03-06 15:28:51 loading file ./rse_SRP005174.Rdata
+2017-03-06 15:28:53 loading file ./rse_SRP005177.Rdata
+2017-03-06 15:28:54 loading file ./rse_SRP005242.Rdata
+2017-03-06 15:28:56 loading file ./rse_SRP005279.Rdata
+2017-03-06 15:28:58 loading file ./rse_SRP005281.Rdata
+2017-03-06 15:29:00 loading file ./rse_SRP005309.Rdata
+2017-03-06 15:29:01 loading file ./rse_SRP005342.Rdata
+2017-03-06 15:29:03 loading file ./rse_SRP005449.Rdata
+2017-03-06 15:29:05 loading file ./rse_SRP005846.Rdata
+2017-03-06 15:29:07 loading file ./rse_SRP005858.Rdata
+2017-03-06 15:29:08 loading file ./rse_SRP005967.Rdata
+2017-03-06 15:29:10 loading file ./rse_SRP006309.Rdata
+2017-03-06 15:29:12 loading file ./rse_SRP006474.Rdata
+2017-03-06 15:29:14 loading file ./rse_SRP006475.Rdata
+2017-03-06 15:29:15 merging RSE objects (group)
+2017-03-06 15:29:18 loading file ./rse_SRP006561.Rdata
+2017-03-06 15:29:20 loading file ./rse_SRP006574.Rdata
+2017-03-06 15:29:23 loading file ./rse_SRP006575.Rdata
+2017-03-06 15:29:25 loading file ./rse_SRP006674.Rdata
+2017-03-06 15:29:27 loading file ./rse_SRP006676.Rdata
+2017-03-06 15:29:29 loading file ./rse_SRP006717.Rdata
+2017-03-06 15:29:30 loading file ./rse_SRP006719.Rdata
+2017-03-06 15:29:32 loading file ./rse_SRP006726.Rdata
+2017-03-06 15:29:34 loading file ./rse_SRP006731.Rdata
+2017-03-06 15:29:36 loading file ./rse_SRP006769.Rdata
+2017-03-06 15:29:38 loading file ./rse_SRP006900.Rdata
+2017-03-06 15:29:40 loading file ./rse_SRP006908.Rdata
+2017-03-06 15:29:41 loading file ./rse_SRP006912.Rdata
+2017-03-06 15:29:43 loading file ./rse_SRP006970.Rdata
+2017-03-06 15:29:45 loading file ./rse_SRP007169.Rdata
+2017-03-06 15:29:46 loading file ./rse_SRP007338.Rdata
+2017-03-06 15:29:48 loading file ./rse_SRP007351.Rdata
+2017-03-06 15:29:50 loading file ./rse_SRP007359.Rdata
+2017-03-06 15:29:52 loading file ./rse_SRP007403.Rdata
+2017-03-06 15:29:53 loading file ./rse_SRP007412.Rdata
+2017-03-06 15:29:55 merging RSE objects (group)
+2017-03-06 15:29:57 loading file ./rse_SRP007417.Rdata
+2017-03-06 15:29:59 loading file ./rse_SRP007461.Rdata
+2017-03-06 15:30:02 loading file ./rse_SRP007481.Rdata
+2017-03-06 15:30:04 loading file ./rse_SRP007483.Rdata
+2017-03-06 15:30:05 loading file ./rse_SRP007494.Rdata
+2017-03-06 15:30:07 loading file ./rse_SRP007498.Rdata
+2017-03-06 15:30:10 loading file ./rse_SRP007506.Rdata
+2017-03-06 15:30:11 loading file ./rse_SRP007508.Rdata
+2017-03-06 15:30:13 loading file ./rse_SRP007525.Rdata
+2017-03-06 15:30:16 loading file ./rse_SRP007560.Rdata
+2017-03-06 15:30:17 loading file ./rse_SRP007569.Rdata
+2017-03-06 15:30:19 loading file ./rse_SRP007584.Rdata
+2017-03-06 15:30:21 loading file ./rse_SRP007596.Rdata
+2017-03-06 15:30:23 loading file ./rse_SRP007605.Rdata
+2017-03-06 15:30:24 loading file ./rse_SRP007641.Rdata
+2017-03-06 15:30:26 loading file ./rse_SRP007665.Rdata
+2017-03-06 15:30:28 loading file ./rse_SRP007819.Rdata
+2017-03-06 15:30:29 loading file ./rse_SRP007825.Rdata
+2017-03-06 15:30:31 loading file ./rse_SRP007862.Rdata
+2017-03-06 15:30:33 loading file ./rse_SRP007881.Rdata
+2017-03-06 15:30:35 loading file ./rse_SRP007885.Rdata
+2017-03-06 15:30:37 merging RSE objects (group)
+2017-03-06 15:30:43 loading file ./rse_SRP007946.Rdata
+2017-03-06 15:30:45 loading file ./rse_SRP007947.Rdata
+2017-03-06 15:30:46 loading file ./rse_SRP008069.Rdata
+2017-03-06 15:30:48 loading file ./rse_SRP008145.Rdata
+2017-03-06 15:30:50 loading file ./rse_SRP008216.Rdata
+2017-03-06 15:30:51 loading file ./rse_SRP008218.Rdata
+2017-03-06 15:30:53 loading file ./rse_SRP008225.Rdata
+2017-03-06 15:30:55 loading file ./rse_SRP008258.Rdata
+2017-03-06 15:30:57 loading file ./rse_SRP008280.Rdata
+2017-03-06 15:30:58 loading file ./rse_SRP008331.Rdata
+2017-03-06 15:31:00 loading file ./rse_SRP008339.Rdata
+2017-03-06 15:31:02 loading file ./rse_SRP008479.Rdata
+2017-03-06 15:31:03 loading file ./rse_SRP008482.Rdata
+2017-03-06 15:31:05 loading file ./rse_SRP008496.Rdata
+2017-03-06 15:31:07 loading file ./rse_SRP008552.Rdata
+2017-03-06 15:31:09 loading file ./rse_SRP008554.Rdata
+2017-03-06 15:31:10 loading file ./rse_SRP008681.Rdata
+2017-03-06 15:31:12 loading file ./rse_SRP008743.Rdata
+2017-03-06 15:31:14 loading file ./rse_SRP008746.Rdata
+2017-03-06 15:31:15 loading file ./rse_SRP008775.Rdata
+2017-03-06 15:31:17 merging RSE objects (group)
+2017-03-06 15:31:18 loading file ./rse_SRP008930.Rdata
+2017-03-06 15:31:20 loading file ./rse_SRP008976.Rdata
+2017-03-06 15:31:22 loading file ./rse_SRP009029.Rdata
+2017-03-06 15:31:24 loading file ./rse_SRP009067.Rdata
+2017-03-06 15:31:25 loading file ./rse_SRP009094.Rdata
+2017-03-06 15:31:27 loading file ./rse_SRP009105.Rdata
+2017-03-06 15:31:29 loading file ./rse_SRP009123.Rdata
+2017-03-06 15:31:31 loading file ./rse_SRP009144.Rdata
+2017-03-06 15:31:32 loading file ./rse_SRP009246.Rdata
+2017-03-06 15:31:34 loading file ./rse_SRP009247.Rdata
+2017-03-06 15:31:36 loading file ./rse_SRP009251.Rdata
+2017-03-06 15:31:38 loading file ./rse_SRP009262.Rdata
+2017-03-06 15:31:40 loading file ./rse_SRP009266.Rdata
+2017-03-06 15:31:42 loading file ./rse_SRP009269.Rdata
+2017-03-06 15:31:43 loading file ./rse_SRP009276.Rdata
+2017-03-06 15:31:45 loading file ./rse_SRP009310.Rdata
+2017-03-06 15:31:47 loading file ./rse_SRP009316.Rdata
+2017-03-06 15:31:49 loading file ./rse_SRP009373.Rdata
+2017-03-06 15:31:52 loading file ./rse_SRP009374.Rdata
+2017-03-06 15:31:53 loading file ./rse_SRP009386.Rdata
+2017-03-06 15:31:55 merging RSE objects (group)
+2017-03-06 15:31:56 loading file ./rse_SRP009408.Rdata
+2017-03-06 15:31:58 loading file ./rse_SRP009455.Rdata
+2017-03-06 15:32:00 loading file ./rse_SRP009474.Rdata
+2017-03-06 15:32:02 loading file ./rse_SRP009568.Rdata
+2017-03-06 15:32:03 loading file ./rse_SRP009615.Rdata
+2017-03-06 15:32:05 loading file ./rse_SRP009659.Rdata
+2017-03-06 15:32:07 loading file ./rse_SRP009790.Rdata
+2017-03-06 15:32:09 loading file ./rse_SRP009840.Rdata
+2017-03-06 15:32:10 loading file ./rse_SRP009861.Rdata
+2017-03-06 15:32:12 loading file ./rse_SRP009862.Rdata
+2017-03-06 15:32:15 loading file ./rse_SRP009864.Rdata
+2017-03-06 15:32:17 loading file ./rse_SRP010038.Rdata
+2017-03-06 15:32:19 loading file ./rse_SRP010041.Rdata
+2017-03-06 15:32:20 loading file ./rse_SRP010054.Rdata
+2017-03-06 15:32:22 loading file ./rse_SRP010061.Rdata
+2017-03-06 15:32:24 loading file ./rse_SRP010064.Rdata
+2017-03-06 15:32:26 loading file ./rse_SRP010129.Rdata
+2017-03-06 15:32:27 loading file ./rse_SRP010166.Rdata
+2017-03-06 15:32:29 loading file ./rse_SRP010181.Rdata
+2017-03-06 15:32:33 loading file ./rse_SRP010279.Rdata
+2017-03-06 15:32:35 merging RSE objects (group)
+2017-03-06 15:32:40 loading file ./rse_SRP010280.Rdata
+2017-03-06 15:32:42 loading file ./rse_SRP010350.Rdata
+2017-03-06 15:32:44 loading file ./rse_SRP010374.Rdata
+2017-03-06 15:32:46 loading file ./rse_SRP010384.Rdata
+2017-03-06 15:32:48 loading file ./rse_SRP010427.Rdata
+2017-03-06 15:32:50 loading file ./rse_SRP010430.Rdata
+2017-03-06 15:32:51 loading file ./rse_SRP010483.Rdata
+2017-03-06 15:32:53 loading file ./rse_SRP010644.Rdata
+2017-03-06 15:32:55 loading file ./rse_SRP010647.Rdata
+2017-03-06 15:32:57 loading file ./rse_SRP010670.Rdata
+2017-03-06 15:32:59 loading file ./rse_SRP010675.Rdata
+2017-03-06 15:33:01 loading file ./rse_SRP010678.Rdata
+2017-03-06 15:33:03 loading file ./rse_SRP010679.Rdata
+2017-03-06 15:33:05 loading file ./rse_SRP010712.Rdata
+2017-03-06 15:33:07 loading file ./rse_SRP010907.Rdata
+2017-03-06 15:33:08 loading file ./rse_SRP010943.Rdata
+2017-03-06 15:33:10 loading file ./rse_SRP010944.Rdata
+2017-03-06 15:33:12 loading file ./rse_SRP010961.Rdata
+2017-03-06 15:33:14 loading file ./rse_SRP011008.Rdata
+2017-03-06 15:33:16 loading file ./rse_SRP011054.Rdata
+2017-03-06 15:33:18 merging RSE objects (group)
+2017-03-06 15:33:19 loading file ./rse_SRP011085.Rdata
+2017-03-06 15:33:21 loading file ./rse_SRP011107.Rdata
+2017-03-06 15:33:23 loading file ./rse_SRP011130.Rdata
+2017-03-06 15:33:25 loading file ./rse_SRP011185.Rdata
+2017-03-06 15:33:27 loading file ./rse_SRP011192.Rdata
+2017-03-06 15:33:29 loading file ./rse_SRP011233.Rdata
+2017-03-06 15:33:30 loading file ./rse_SRP011278.Rdata
+2017-03-06 15:33:32 loading file ./rse_SRP011369.Rdata
+2017-03-06 15:33:34 loading file ./rse_SRP011378.Rdata
+2017-03-06 15:33:36 loading file ./rse_SRP011422.Rdata
+2017-03-06 15:33:38 loading file ./rse_SRP011486.Rdata
+2017-03-06 15:33:40 loading file ./rse_SRP011546.Rdata
+2017-03-06 15:33:43 loading file ./rse_SRP011578.Rdata
+2017-03-06 15:33:45 loading file ./rse_SRP011895.Rdata
+2017-03-06 15:33:47 loading file ./rse_SRP011903.Rdata
+2017-03-06 15:33:49 loading file ./rse_SRP011924.Rdata
+2017-03-06 15:33:51 loading file ./rse_SRP011927.Rdata
+2017-03-06 15:33:53 loading file ./rse_SRP011974.Rdata
+2017-03-06 15:33:55 loading file ./rse_SRP011977.Rdata
+2017-03-06 15:33:57 loading file ./rse_SRP012015.Rdata
+2017-03-06 15:33:59 merging RSE objects (group)
+2017-03-06 15:34:01 loading file ./rse_SRP012056.Rdata
+2017-03-06 15:34:03 loading file ./rse_SRP012062.Rdata
+2017-03-06 15:34:05 loading file ./rse_SRP012096.Rdata
+2017-03-06 15:34:07 loading file ./rse_SRP012098.Rdata
+2017-03-06 15:34:09 loading file ./rse_SRP012099.Rdata
+2017-03-06 15:34:11 loading file ./rse_SRP012100.Rdata
+2017-03-06 15:34:13 loading file ./rse_SRP012167.Rdata
+2017-03-06 15:34:15 loading file ./rse_SRP012289.Rdata
+2017-03-06 15:34:17 loading file ./rse_SRP012295.Rdata
+2017-03-06 15:34:19 loading file ./rse_SRP012461.Rdata
+2017-03-06 15:34:23 loading file ./rse_SRP012463.Rdata
+2017-03-06 15:34:25 loading file ./rse_SRP012540.Rdata
+2017-03-06 15:34:27 loading file ./rse_SRP012546.Rdata
+2017-03-06 15:34:29 loading file ./rse_SRP012557.Rdata
+2017-03-06 15:34:31 loading file ./rse_SRP012568.Rdata
+2017-03-06 15:34:33 loading file ./rse_SRP012585.Rdata
+2017-03-06 15:34:35 loading file ./rse_SRP012607.Rdata
+2017-03-06 15:34:37 loading file ./rse_SRP012608.Rdata
+2017-03-06 15:34:39 loading file ./rse_SRP012612.Rdata
+2017-03-06 15:34:41 loading file ./rse_SRP012651.Rdata
+2017-03-06 15:34:43 merging RSE objects (group)
+2017-03-06 15:34:49 loading file ./rse_SRP012656.Rdata
+2017-03-06 15:34:51 loading file ./rse_SRP012695.Rdata
+2017-03-06 15:34:53 loading file ./rse_SRP013021.Rdata
+2017-03-06 15:34:55 loading file ./rse_SRP013022.Rdata
+2017-03-06 15:34:57 loading file ./rse_SRP013224.Rdata
+2017-03-06 15:34:59 loading file ./rse_SRP013232.Rdata
+2017-03-06 15:35:01 loading file ./rse_SRP013239.Rdata
+2017-03-06 15:35:03 loading file ./rse_SRP013288.Rdata
+2017-03-06 15:35:05 loading file ./rse_SRP013299.Rdata
+2017-03-06 15:35:07 loading file ./rse_SRP013363.Rdata
+2017-03-06 15:35:09 loading file ./rse_SRP013389.Rdata
+2017-03-06 15:35:12 loading file ./rse_SRP013402.Rdata
+2017-03-06 15:35:14 loading file ./rse_SRP013450.Rdata
+2017-03-06 15:35:16 loading file ./rse_SRP013456.Rdata
+2017-03-06 15:35:18 loading file ./rse_SRP013463.Rdata
+2017-03-06 15:35:20 loading file ./rse_SRP013473.Rdata
+2017-03-06 15:35:22 loading file ./rse_SRP013504.Rdata
+2017-03-06 15:35:23 loading file ./rse_SRP013619.Rdata
+2017-03-06 15:35:25 loading file ./rse_SRP013621.Rdata
+2017-03-06 15:35:27 loading file ./rse_SRP013724.Rdata
+2017-03-06 15:35:29 loading file ./rse_SRP013725.Rdata
+2017-03-06 15:35:31 merging RSE objects (group)
+2017-03-06 15:35:33 loading file ./rse_SRP013773.Rdata
+2017-03-06 15:35:34 loading file ./rse_SRP013825.Rdata
+2017-03-06 15:35:36 loading file ./rse_SRP013842.Rdata
+2017-03-06 15:35:38 loading file ./rse_SRP013912.Rdata
+2017-03-06 15:35:40 loading file ./rse_SRP013935.Rdata
+2017-03-06 15:35:41 loading file ./rse_SRP013981.Rdata
+2017-03-06 15:35:43 loading file ./rse_SRP013984.Rdata
+2017-03-06 15:35:45 loading file ./rse_SRP013985.Rdata
+2017-03-06 15:35:46 loading file ./rse_SRP013999.Rdata
+2017-03-06 15:35:48 loading file ./rse_SRP014009.Rdata
+2017-03-06 15:35:50 loading file ./rse_SRP014020.Rdata
+2017-03-06 15:35:52 loading file ./rse_SRP014027.Rdata
+2017-03-06 15:35:54 loading file ./rse_SRP014133.Rdata
+2017-03-06 15:35:55 loading file ./rse_SRP014142.Rdata
+2017-03-06 15:35:57 loading file ./rse_SRP014146.Rdata
+2017-03-06 15:35:59 loading file ./rse_SRP014157.Rdata
+2017-03-06 15:36:01 loading file ./rse_SRP014190.Rdata
+2017-03-06 15:36:02 loading file ./rse_SRP014213.Rdata
+2017-03-06 15:36:04 loading file ./rse_SRP014320.Rdata
+2017-03-06 15:36:07 loading file ./rse_SRP014428.Rdata
+2017-03-06 15:36:09 merging RSE objects (group)
+2017-03-06 15:36:11 loading file ./rse_SRP014443.Rdata
+2017-03-06 15:36:13 loading file ./rse_SRP014487.Rdata
+2017-03-06 15:36:15 loading file ./rse_SRP014540.Rdata
+2017-03-06 15:36:16 loading file ./rse_SRP014542.Rdata
+2017-03-06 15:36:18 loading file ./rse_SRP014565.Rdata
+2017-03-06 15:36:20 loading file ./rse_SRP014566.Rdata
+2017-03-06 15:36:22 loading file ./rse_SRP014574.Rdata
+2017-03-06 15:36:24 loading file ./rse_SRP014591.Rdata
+2017-03-06 15:36:26 loading file ./rse_SRP014620.Rdata
+2017-03-06 15:36:27 loading file ./rse_SRP014624.Rdata
+2017-03-06 15:36:29 loading file ./rse_SRP014626.Rdata
+2017-03-06 15:36:31 loading file ./rse_SRP014629.Rdata
+2017-03-06 15:36:33 loading file ./rse_SRP014635.Rdata
+2017-03-06 15:36:34 loading file ./rse_SRP014670.Rdata
+2017-03-06 15:36:36 loading file ./rse_SRP014671.Rdata
+2017-03-06 15:36:38 loading file ./rse_SRP014675.Rdata
+2017-03-06 15:36:40 loading file ./rse_SRP014688.Rdata
+2017-03-06 15:36:42 loading file ./rse_SRP014739.Rdata
+2017-03-06 15:36:43 loading file ./rse_SRP014754.Rdata
+2017-03-06 15:36:45 loading file ./rse_SRP014759.Rdata
+2017-03-06 15:36:47 merging RSE objects (group)
+2017-03-06 15:36:49 loading file ./rse_SRP014790.Rdata
+2017-03-06 15:36:50 loading file ./rse_SRP014809.Rdata
+2017-03-06 15:36:52 loading file ./rse_SRP014830.Rdata
+2017-03-06 15:36:55 loading file ./rse_SRP014842.Rdata
+2017-03-06 15:36:57 loading file ./rse_SRP014844.Rdata
+2017-03-06 15:36:58 loading file ./rse_SRP014856.Rdata
+2017-03-06 15:37:00 loading file ./rse_SRP014857.Rdata
+2017-03-06 15:37:02 loading file ./rse_SRP014867.Rdata
+2017-03-06 15:37:04 loading file ./rse_SRP014906.Rdata
+2017-03-06 15:37:06 loading file ./rse_SRP014920.Rdata
+2017-03-06 15:37:08 loading file ./rse_SRP014925.Rdata
+2017-03-06 15:37:10 loading file ./rse_SRP015003.Rdata
+2017-03-06 15:37:12 loading file ./rse_SRP015013.Rdata
+2017-03-06 15:37:14 loading file ./rse_SRP015138.Rdata
+2017-03-06 15:37:16 loading file ./rse_SRP015336.Rdata
+2017-03-06 15:37:18 loading file ./rse_SRP015360.Rdata
+2017-03-06 15:37:20 loading file ./rse_SRP015361.Rdata
+2017-03-06 15:37:22 loading file ./rse_SRP015370.Rdata
+2017-03-06 15:37:24 loading file ./rse_SRP015409.Rdata
+2017-03-06 15:37:26 loading file ./rse_SRP015419.Rdata
+2017-03-06 15:37:29 merging RSE objects (group)
+2017-03-06 15:37:30 loading file ./rse_SRP015435.Rdata
+2017-03-06 15:37:32 loading file ./rse_SRP015439.Rdata
+2017-03-06 15:37:34 loading file ./rse_SRP015449.Rdata
+2017-03-06 15:37:36 loading file ./rse_SRP015640.Rdata
+2017-03-06 15:37:39 loading file ./rse_SRP015668.Rdata
+2017-03-06 15:37:41 loading file ./rse_SRP015670.Rdata
+2017-03-06 15:37:43 loading file ./rse_SRP015678.Rdata
+2017-03-06 15:37:45 loading file ./rse_SRP015711.Rdata
+2017-03-06 15:37:47 loading file ./rse_SRP015715.Rdata
+2017-03-06 15:37:49 loading file ./rse_SRP015725.Rdata
+2017-03-06 15:37:51 loading file ./rse_SRP015733.Rdata
+2017-03-06 15:37:53 loading file ./rse_SRP015741.Rdata
+2017-03-06 15:37:55 loading file ./rse_SRP015761.Rdata
+2017-03-06 15:37:57 loading file ./rse_SRP015764.Rdata
+2017-03-06 15:37:59 loading file ./rse_SRP015789.Rdata
+2017-03-06 15:38:01 loading file ./rse_SRP015799.Rdata
+2017-03-06 15:38:03 loading file ./rse_SRP015819.Rdata
+2017-03-06 15:38:05 loading file ./rse_SRP015845.Rdata
+2017-03-06 15:38:07 loading file ./rse_SRP015853.Rdata
+2017-03-06 15:38:08 loading file ./rse_SRP015868.Rdata
+2017-03-06 15:38:10 merging RSE objects (group)
+2017-03-06 15:38:12 loading file ./rse_SRP015904.Rdata
+2017-03-06 15:38:14 loading file ./rse_SRP015909.Rdata
+2017-03-06 15:38:16 loading file ./rse_SRP015926.Rdata
+2017-03-06 15:38:17 loading file ./rse_SRP015943.Rdata
+2017-03-06 15:38:19 loading file ./rse_SRP015955.Rdata
+2017-03-06 15:38:21 loading file ./rse_SRP015964.Rdata
+2017-03-06 15:38:23 loading file ./rse_SRP015976.Rdata
+2017-03-06 15:38:25 loading file ./rse_SRP015989.Rdata
+2017-03-06 15:38:27 loading file ./rse_SRP016003.Rdata
+2017-03-06 15:38:29 loading file ./rse_SRP016004.Rdata
+2017-03-06 15:38:31 loading file ./rse_SRP016059.Rdata
+2017-03-06 15:38:33 loading file ./rse_SRP016110.Rdata
+2017-03-06 15:38:35 loading file ./rse_SRP016118.Rdata
+2017-03-06 15:38:37 loading file ./rse_SRP016130.Rdata
+2017-03-06 15:38:39 loading file ./rse_SRP016140.Rdata
+2017-03-06 15:38:41 loading file ./rse_SRP016568.Rdata
+2017-03-06 15:38:43 loading file ./rse_SRP016583.Rdata
+2017-03-06 15:38:45 loading file ./rse_SRP016589.Rdata
+2017-03-06 15:38:47 loading file ./rse_SRP016626.Rdata
+2017-03-06 15:38:49 loading file ./rse_SRP016629.Rdata
+2017-03-06 15:38:50 merging RSE objects (group)
+2017-03-06 15:38:53 loading file ./rse_SRP016790.Rdata
+2017-03-06 15:38:55 loading file ./rse_SRP017019.Rdata
+2017-03-06 15:38:57 loading file ./rse_SRP017105.Rdata
+2017-03-06 15:38:59 loading file ./rse_SRP017123.Rdata
+2017-03-06 15:39:01 loading file ./rse_SRP017138.Rdata
+2017-03-06 15:39:03 loading file ./rse_SRP017142.Rdata
+2017-03-06 15:39:05 loading file ./rse_SRP017190.Rdata
+2017-03-06 15:39:07 loading file ./rse_SRP017199.Rdata
+2017-03-06 15:39:09 loading file ./rse_SRP017253.Rdata
+2017-03-06 15:39:11 loading file ./rse_SRP017262.Rdata
+2017-03-06 15:39:13 loading file ./rse_SRP017263.Rdata
+2017-03-06 15:39:15 loading file ./rse_SRP017294.Rdata
+2017-03-06 15:39:17 loading file ./rse_SRP017305.Rdata
+2017-03-06 15:39:19 loading file ./rse_SRP017330.Rdata
+2017-03-06 15:39:21 loading file ./rse_SRP017352.Rdata
+2017-03-06 15:39:23 loading file ./rse_SRP017378.Rdata
+2017-03-06 15:39:25 loading file ./rse_SRP017395.Rdata
+2017-03-06 15:39:27 loading file ./rse_SRP017411.Rdata
+2017-03-06 15:39:29 loading file ./rse_SRP017413.Rdata
+2017-03-06 15:39:31 loading file ./rse_SRP017435.Rdata
+2017-03-06 15:39:33 merging RSE objects (group)
+2017-03-06 15:39:36 loading file ./rse_SRP017464.Rdata
+2017-03-06 15:39:38 loading file ./rse_SRP017465.Rdata
+2017-03-06 15:39:40 loading file ./rse_SRP017575.Rdata
+2017-03-06 15:39:42 loading file ./rse_SRP017577.Rdata
+2017-03-06 15:39:44 loading file ./rse_SRP017580.Rdata
+2017-03-06 15:39:46 loading file ./rse_SRP017583.Rdata
+2017-03-06 15:39:48 loading file ./rse_SRP017631.Rdata
+2017-03-06 15:39:50 loading file ./rse_SRP017644.Rdata
+2017-03-06 15:39:52 loading file ./rse_SRP017670.Rdata
+2017-03-06 15:39:54 loading file ./rse_SRP017684.Rdata
+2017-03-06 15:39:56 loading file ./rse_SRP017699.Rdata
+2017-03-06 15:39:58 loading file ./rse_SRP017717.Rdata
+2017-03-06 15:40:00 loading file ./rse_SRP017777.Rdata
+2017-03-06 15:40:02 loading file ./rse_SRP017786.Rdata
+2017-03-06 15:40:04 loading file ./rse_SRP017788.Rdata
+2017-03-06 15:40:06 loading file ./rse_SRP017789.Rdata
+2017-03-06 15:40:08 loading file ./rse_SRP017809.Rdata
+2017-03-06 15:40:10 loading file ./rse_SRP017843.Rdata
+2017-03-06 15:40:12 loading file ./rse_SRP017875.Rdata
+2017-03-06 15:40:14 loading file ./rse_SRP017933.Rdata
+2017-03-06 15:40:16 loading file ./rse_SRP017942.Rdata
+2017-03-06 15:40:18 merging RSE objects (group)
+2017-03-06 15:40:19 loading file ./rse_SRP017959.Rdata
+2017-03-06 15:40:22 loading file ./rse_SRP017966.Rdata
+2017-03-06 15:40:24 loading file ./rse_SRP017972.Rdata
+2017-03-06 15:40:25 loading file ./rse_SRP017979.Rdata
+2017-03-06 15:40:28 loading file ./rse_SRP018008.Rdata
+2017-03-06 15:40:30 loading file ./rse_SRP018010.Rdata
+2017-03-06 15:40:32 loading file ./rse_SRP018014.Rdata
+2017-03-06 15:40:34 loading file ./rse_SRP018020.Rdata
+2017-03-06 15:40:36 loading file ./rse_SRP018022.Rdata
+2017-03-06 15:40:38 loading file ./rse_SRP018028.Rdata
+2017-03-06 15:40:40 loading file ./rse_SRP018104.Rdata
+2017-03-06 15:40:42 loading file ./rse_SRP018218.Rdata
+2017-03-06 15:40:45 loading file ./rse_SRP018234.Rdata
+2017-03-06 15:40:47 loading file ./rse_SRP018241.Rdata
+2017-03-06 15:40:48 loading file ./rse_SRP018242.Rdata
+2017-03-06 15:40:50 loading file ./rse_SRP018254.Rdata
+2017-03-06 15:40:52 loading file ./rse_SRP018256.Rdata
+2017-03-06 15:40:54 loading file ./rse_SRP018284.Rdata
+2017-03-06 15:40:56 loading file ./rse_SRP018304.Rdata
+2017-03-06 15:40:58 loading file ./rse_SRP018312.Rdata
+2017-03-06 15:41:00 merging RSE objects (group)
+2017-03-06 15:41:03 loading file ./rse_SRP018317.Rdata
+2017-03-06 15:41:05 loading file ./rse_SRP018359.Rdata
+2017-03-06 15:41:07 loading file ./rse_SRP018377.Rdata
+2017-03-06 15:41:09 loading file ./rse_SRP018403.Rdata
+2017-03-06 15:41:11 loading file ./rse_SRP018525.Rdata
+2017-03-06 15:41:13 loading file ./rse_SRP018552.Rdata
+2017-03-06 15:41:15 loading file ./rse_SRP018571.Rdata
+2017-03-06 15:41:17 loading file ./rse_SRP018716.Rdata
+2017-03-06 15:41:19 loading file ./rse_SRP018717.Rdata
+2017-03-06 15:41:21 loading file ./rse_SRP018718.Rdata
+2017-03-06 15:41:23 loading file ./rse_SRP018719.Rdata
+2017-03-06 15:41:26 loading file ./rse_SRP018723.Rdata
+2017-03-06 15:41:27 loading file ./rse_SRP018777.Rdata
+2017-03-06 15:41:29 loading file ./rse_SRP018778.Rdata
+2017-03-06 15:41:31 loading file ./rse_SRP018779.Rdata
+2017-03-06 15:41:33 loading file ./rse_SRP018786.Rdata
+2017-03-06 15:41:36 loading file ./rse_SRP018815.Rdata
+2017-03-06 15:41:38 loading file ./rse_SRP018836.Rdata
+2017-03-06 15:41:40 loading file ./rse_SRP018837.Rdata
+2017-03-06 15:41:42 loading file ./rse_SRP018838.Rdata
+2017-03-06 15:41:44 merging RSE objects (group)
+2017-03-06 15:41:46 loading file ./rse_SRP018848.Rdata
+2017-03-06 15:41:48 loading file ./rse_SRP018853.Rdata
+2017-03-06 15:41:50 loading file ./rse_SRP018861.Rdata
+2017-03-06 15:41:52 loading file ./rse_SRP018883.Rdata
+2017-03-06 15:41:54 loading file ./rse_SRP018933.Rdata
+2017-03-06 15:41:56 loading file ./rse_SRP018972.Rdata
+2017-03-06 15:41:58 loading file ./rse_SRP019207.Rdata
+2017-03-06 15:42:00 loading file ./rse_SRP019222.Rdata
+2017-03-06 15:42:01 loading file ./rse_SRP019240.Rdata
+2017-03-06 15:42:03 loading file ./rse_SRP019241.Rdata
+2017-03-06 15:42:05 loading file ./rse_SRP019248.Rdata
+2017-03-06 15:42:07 loading file ./rse_SRP019250.Rdata
+2017-03-06 15:42:09 loading file ./rse_SRP019263.Rdata
+2017-03-06 15:42:11 loading file ./rse_SRP019270.Rdata
+2017-03-06 15:42:13 loading file ./rse_SRP019272.Rdata
+2017-03-06 15:42:16 loading file ./rse_SRP019275.Rdata
+2017-03-06 15:42:18 loading file ./rse_SRP019374.Rdata
+2017-03-06 15:42:20 loading file ./rse_SRP019498.Rdata
+2017-03-06 15:42:22 loading file ./rse_SRP019503.Rdata
+2017-03-06 15:42:24 loading file ./rse_SRP019758.Rdata
+2017-03-06 15:42:26 merging RSE objects (group)
+2017-03-06 15:42:29 loading file ./rse_SRP019762.Rdata
+2017-03-06 15:42:31 loading file ./rse_SRP019807.Rdata
+2017-03-06 15:42:33 loading file ./rse_SRP019810.Rdata
+2017-03-06 15:42:35 loading file ./rse_SRP019817.Rdata
+2017-03-06 15:42:37 loading file ./rse_SRP019936.Rdata
+2017-03-06 15:42:39 loading file ./rse_SRP019939.Rdata
+2017-03-06 15:42:41 loading file ./rse_SRP019946.Rdata
+2017-03-06 15:42:43 loading file ./rse_SRP019961.Rdata
+2017-03-06 15:42:45 loading file ./rse_SRP019968.Rdata
+2017-03-06 15:42:47 loading file ./rse_SRP019980.Rdata
+2017-03-06 15:42:49 loading file ./rse_SRP019989.Rdata
+2017-03-06 15:42:51 loading file ./rse_SRP019990.Rdata
+2017-03-06 15:42:53 loading file ./rse_SRP019994.Rdata
+2017-03-06 15:42:56 loading file ./rse_SRP020237.Rdata
+2017-03-06 15:42:58 loading file ./rse_SRP020470.Rdata
+2017-03-06 15:43:00 loading file ./rse_SRP020486.Rdata
+2017-03-06 15:43:02 loading file ./rse_SRP020491.Rdata
+2017-03-06 15:43:04 loading file ./rse_SRP020492.Rdata
+2017-03-06 15:43:06 loading file ./rse_SRP020493.Rdata
+2017-03-06 15:43:08 loading file ./rse_SRP020496.Rdata
+2017-03-06 15:43:10 merging RSE objects (group)
+2017-03-06 15:43:12 loading file ./rse_SRP020499.Rdata
+2017-03-06 15:43:14 loading file ./rse_SRP020544.Rdata
+2017-03-06 15:43:15 loading file ./rse_SRP020556.Rdata
+2017-03-06 15:43:17 loading file ./rse_SRP020561.Rdata
+2017-03-06 15:43:19 loading file ./rse_SRP020646.Rdata
+2017-03-06 15:43:21 loading file ./rse_SRP020661.Rdata
+2017-03-06 15:43:23 loading file ./rse_SRP021039.Rdata
+2017-03-06 15:43:25 loading file ./rse_SRP021048.Rdata
+2017-03-06 15:43:26 loading file ./rse_SRP021072.Rdata
+2017-03-06 15:43:28 loading file ./rse_SRP021085.Rdata
+2017-03-06 15:43:30 loading file ./rse_SRP021130.Rdata
+2017-03-06 15:43:32 loading file ./rse_SRP021134.Rdata
+2017-03-06 15:43:36 loading file ./rse_SRP021191.Rdata
+2017-03-06 15:43:38 loading file ./rse_SRP021193.Rdata
+2017-03-06 15:43:40 loading file ./rse_SRP021214.Rdata
+2017-03-06 15:43:42 loading file ./rse_SRP021221.Rdata
+2017-03-06 15:43:44 loading file ./rse_SRP021459.Rdata
+2017-03-06 15:43:45 loading file ./rse_SRP021468.Rdata
+2017-03-06 15:43:47 loading file ./rse_SRP021478.Rdata
+2017-03-06 15:43:49 loading file ./rse_SRP021509.Rdata
+2017-03-06 15:43:51 merging RSE objects (group)
+2017-03-06 15:43:53 loading file ./rse_SRP021524.Rdata
+2017-03-06 15:43:54 loading file ./rse_SRP021891.Rdata
+2017-03-06 15:43:56 loading file ./rse_SRP021908.Rdata
+2017-03-06 15:43:58 loading file ./rse_SRP021911.Rdata
+2017-03-06 15:44:00 loading file ./rse_SRP021912.Rdata
+2017-03-06 15:44:01 loading file ./rse_SRP021916.Rdata
+2017-03-06 15:44:03 loading file ./rse_SRP021917.Rdata
+2017-03-06 15:44:05 loading file ./rse_SRP021918.Rdata
+2017-03-06 15:44:07 loading file ./rse_SRP021924.Rdata
+2017-03-06 15:44:08 loading file ./rse_SRP022025.Rdata
+2017-03-06 15:44:10 loading file ./rse_SRP022028.Rdata
+2017-03-06 15:44:12 loading file ./rse_SRP022029.Rdata
+2017-03-06 15:44:14 loading file ./rse_SRP022043.Rdata
+2017-03-06 15:44:16 loading file ./rse_SRP022052.Rdata
+2017-03-06 15:44:18 loading file ./rse_SRP022054.Rdata
+2017-03-06 15:44:20 loading file ./rse_SRP022133.Rdata
+2017-03-06 15:44:21 loading file ./rse_SRP022140.Rdata
+2017-03-06 15:44:23 loading file ./rse_SRP022166.Rdata
+2017-03-06 15:44:25 loading file ./rse_SRP022259.Rdata
+2017-03-06 15:44:27 loading file ./rse_SRP022260.Rdata
+2017-03-06 15:44:28 merging RSE objects (group)
+2017-03-06 15:44:30 loading file ./rse_SRP022361.Rdata
+2017-03-06 15:44:32 loading file ./rse_SRP022591.Rdata
+2017-03-06 15:44:34 loading file ./rse_SRP022772.Rdata
+2017-03-06 15:44:36 loading file ./rse_SRP022871.Rdata
+2017-03-06 15:44:37 loading file ./rse_SRP022876.Rdata
+2017-03-06 15:44:39 loading file ./rse_SRP022892.Rdata
+2017-03-06 15:44:41 loading file ./rse_SRP022905.Rdata
+2017-03-06 15:44:42 loading file ./rse_SRP022913.Rdata
+2017-03-06 15:44:44 loading file ./rse_SRP022920.Rdata
+2017-03-06 15:44:46 loading file ./rse_SRP022925.Rdata
+2017-03-06 15:44:48 loading file ./rse_SRP022942.Rdata
+2017-03-06 15:44:50 loading file ./rse_SRP023111.Rdata
+2017-03-06 15:44:51 loading file ./rse_SRP023199.Rdata
+2017-03-06 15:44:53 loading file ./rse_SRP023233.Rdata
+2017-03-06 15:44:55 loading file ./rse_SRP023262.Rdata
+2017-03-06 15:44:57 loading file ./rse_SRP023270.Rdata
+2017-03-06 15:44:59 loading file ./rse_SRP023533.Rdata
+2017-03-06 15:45:01 loading file ./rse_SRP023538.Rdata
+2017-03-06 15:45:02 loading file ./rse_SRP023539.Rdata
+2017-03-06 15:45:04 loading file ./rse_SRP023540.Rdata
+2017-03-06 15:45:06 merging RSE objects (group)
+2017-03-06 15:45:07 loading file ./rse_SRP023548.Rdata
+2017-03-06 15:45:09 loading file ./rse_SRP023550.Rdata
+2017-03-06 15:45:11 loading file ./rse_SRP024236.Rdata
+2017-03-06 15:45:13 loading file ./rse_SRP024244.Rdata
+2017-03-06 15:45:15 loading file ./rse_SRP024268.Rdata
+2017-03-06 15:45:17 loading file ./rse_SRP024274.Rdata
+2017-03-06 15:45:19 loading file ./rse_SRP024669.Rdata
+2017-03-06 15:45:21 loading file ./rse_SRP024674.Rdata
+2017-03-06 15:45:23 loading file ./rse_SRP025977.Rdata
+2017-03-06 15:45:25 loading file ./rse_SRP025982.Rdata
+2017-03-06 15:45:39 loading file ./rse_SRP025989.Rdata
+2017-03-06 15:45:41 loading file ./rse_SRP026013.Rdata
+2017-03-06 15:45:43 loading file ./rse_SRP026033.Rdata
+2017-03-06 15:45:45 loading file ./rse_SRP026042.Rdata
+2017-03-06 15:45:47 loading file ./rse_SRP026044.Rdata
+2017-03-06 15:45:49 loading file ./rse_SRP026048.Rdata
+2017-03-06 15:45:51 loading file ./rse_SRP026052.Rdata
+2017-03-06 15:45:53 loading file ./rse_SRP026084.Rdata
+2017-03-06 15:45:55 loading file ./rse_SRP026089.Rdata
+2017-03-06 15:45:57 loading file ./rse_SRP026126.Rdata
+2017-03-06 15:46:02 loading file ./rse_SRP026144.Rdata
+2017-03-06 15:46:04 merging RSE objects (group)
+2017-03-06 15:46:15 loading file ./rse_SRP026204.Rdata
+2017-03-06 15:46:17 loading file ./rse_SRP026208.Rdata
+2017-03-06 15:46:19 loading file ./rse_SRP026256.Rdata
+2017-03-06 15:46:21 loading file ./rse_SRP026257.Rdata
+2017-03-06 15:46:23 loading file ./rse_SRP026297.Rdata
+2017-03-06 15:46:25 loading file ./rse_SRP026315.Rdata
+2017-03-06 15:46:27 loading file ./rse_SRP026331.Rdata
+2017-03-06 15:46:29 loading file ./rse_SRP026333.Rdata
+2017-03-06 15:46:31 loading file ./rse_SRP026359.Rdata
+2017-03-06 15:46:33 loading file ./rse_SRP026387.Rdata
+2017-03-06 15:46:35 loading file ./rse_SRP026389.Rdata
+2017-03-06 15:46:37 loading file ./rse_SRP026454.Rdata
+2017-03-06 15:46:39 loading file ./rse_SRP026537.Rdata
+2017-03-06 15:46:42 loading file ./rse_SRP026553.Rdata
+2017-03-06 15:46:44 loading file ./rse_SRP026562.Rdata
+2017-03-06 15:46:46 loading file ./rse_SRP026597.Rdata
+2017-03-06 15:46:48 loading file ./rse_SRP026600.Rdata
+2017-03-06 15:46:50 loading file ./rse_SRP026620.Rdata
+2017-03-06 15:46:52 loading file ./rse_SRP026621.Rdata
+2017-03-06 15:46:54 loading file ./rse_SRP026648.Rdata
+2017-03-06 15:46:56 merging RSE objects (group)
+2017-03-06 15:46:58 loading file ./rse_SRP026690.Rdata
+2017-03-06 15:47:00 loading file ./rse_SRP027015.Rdata
+2017-03-06 15:47:02 loading file ./rse_SRP027258.Rdata
+2017-03-06 15:47:04 loading file ./rse_SRP027345.Rdata
+2017-03-06 15:47:06 loading file ./rse_SRP027358.Rdata
+2017-03-06 15:47:09 loading file ./rse_SRP027364.Rdata
+2017-03-06 15:47:11 loading file ./rse_SRP027383.Rdata
+2017-03-06 15:47:16 loading file ./rse_SRP027508.Rdata
+2017-03-06 15:47:18 loading file ./rse_SRP027514.Rdata
+2017-03-06 15:47:20 loading file ./rse_SRP027530.Rdata
+2017-03-06 15:47:22 loading file ./rse_SRP027538.Rdata
+2017-03-06 15:47:24 loading file ./rse_SRP027589.Rdata
+2017-03-06 15:47:26 loading file ./rse_SRP028118.Rdata
+2017-03-06 15:47:28 loading file ./rse_SRP028155.Rdata
+2017-03-06 15:47:30 loading file ./rse_SRP028170.Rdata
+2017-03-06 15:47:33 loading file ./rse_SRP028180.Rdata
+2017-03-06 15:47:35 loading file ./rse_SRP028190.Rdata
+2017-03-06 15:47:37 loading file ./rse_SRP028282.Rdata
+2017-03-06 15:47:39 loading file ./rse_SRP028291.Rdata
+2017-03-06 15:47:41 loading file ./rse_SRP028301.Rdata
+2017-03-06 15:47:43 merging RSE objects (group)
+2017-03-06 15:47:48 loading file ./rse_SRP028316.Rdata
+2017-03-06 15:47:50 loading file ./rse_SRP028325.Rdata
+2017-03-06 15:47:52 loading file ./rse_SRP028336.Rdata
+2017-03-06 15:47:54 loading file ./rse_SRP028340.Rdata
+2017-03-06 15:47:56 loading file ./rse_SRP028344.Rdata
+2017-03-06 15:47:58 loading file ./rse_SRP028346.Rdata
+2017-03-06 15:48:00 loading file ./rse_SRP028526.Rdata
+2017-03-06 15:48:03 loading file ./rse_SRP028528.Rdata
+2017-03-06 15:48:05 loading file ./rse_SRP028530.Rdata
+2017-03-06 15:48:07 loading file ./rse_SRP028554.Rdata
+2017-03-06 15:48:09 loading file ./rse_SRP028570.Rdata
+2017-03-06 15:48:11 loading file ./rse_SRP028594.Rdata
+2017-03-06 15:48:14 loading file ./rse_SRP028612.Rdata
+2017-03-06 15:48:16 loading file ./rse_SRP028705.Rdata
+2017-03-06 15:48:18 loading file ./rse_SRP028720.Rdata
+2017-03-06 15:48:21 loading file ./rse_SRP028738.Rdata
+2017-03-06 15:48:23 loading file ./rse_SRP028804.Rdata
+2017-03-06 15:48:25 loading file ./rse_SRP028814.Rdata
+2017-03-06 15:48:27 loading file ./rse_SRP028815.Rdata
+2017-03-06 15:48:29 loading file ./rse_SRP028822.Rdata
+2017-03-06 15:48:31 merging RSE objects (group)
+2017-03-06 15:48:33 loading file ./rse_SRP028887.Rdata
+2017-03-06 15:48:35 loading file ./rse_SRP028902.Rdata
+2017-03-06 15:48:37 loading file ./rse_SRP028912.Rdata
+2017-03-06 15:48:39 loading file ./rse_SRP028952.Rdata
+2017-03-06 15:48:41 loading file ./rse_SRP028963.Rdata
+2017-03-06 15:48:43 loading file ./rse_SRP029207.Rdata
+2017-03-06 15:48:45 loading file ./rse_SRP029245.Rdata
+2017-03-06 15:48:47 loading file ./rse_SRP029262.Rdata
+2017-03-06 15:48:49 loading file ./rse_SRP029281.Rdata
+2017-03-06 15:48:51 loading file ./rse_SRP029334.Rdata
+2017-03-06 15:48:53 loading file ./rse_SRP029341.Rdata
+2017-03-06 15:48:55 loading file ./rse_SRP029365.Rdata
+2017-03-06 15:48:57 loading file ./rse_SRP029367.Rdata
+2017-03-06 15:48:59 loading file ./rse_SRP029401.Rdata
+2017-03-06 15:49:01 loading file ./rse_SRP029434.Rdata
+2017-03-06 15:49:03 loading file ./rse_SRP029452.Rdata
+2017-03-06 15:49:05 loading file ./rse_SRP029513.Rdata
+2017-03-06 15:49:07 loading file ./rse_SRP029515.Rdata
+2017-03-06 15:49:09 loading file ./rse_SRP029589.Rdata
+2017-03-06 15:49:11 loading file ./rse_SRP029591.Rdata
+2017-03-06 15:49:12 merging RSE objects (group)
+2017-03-06 15:49:18 loading file ./rse_SRP029592.Rdata
+2017-03-06 15:49:20 loading file ./rse_SRP029603.Rdata
+2017-03-06 15:49:22 loading file ./rse_SRP029656.Rdata
+2017-03-06 15:49:24 loading file ./rse_SRP029739.Rdata
+2017-03-06 15:49:26 loading file ./rse_SRP029880.Rdata
+2017-03-06 15:49:28 loading file ./rse_SRP029888.Rdata
+2017-03-06 15:49:30 loading file ./rse_SRP029889.Rdata
+2017-03-06 15:49:32 loading file ./rse_SRP029899.Rdata
+2017-03-06 15:49:34 loading file ./rse_SRP029953.Rdata
+2017-03-06 15:49:36 loading file ./rse_SRP029987.Rdata
+2017-03-06 15:49:38 loading file ./rse_SRP029990.Rdata
+2017-03-06 15:49:40 loading file ./rse_SRP030027.Rdata
+2017-03-06 15:49:42 loading file ./rse_SRP030040.Rdata
+2017-03-06 15:49:44 loading file ./rse_SRP030041.Rdata
+2017-03-06 15:49:46 loading file ./rse_SRP030401.Rdata
+2017-03-06 15:49:48 loading file ./rse_SRP030471.Rdata
+2017-03-06 15:49:50 loading file ./rse_SRP030475.Rdata
+2017-03-06 15:49:52 loading file ./rse_SRP030617.Rdata
+2017-03-06 15:49:54 loading file ./rse_SRP030628.Rdata
+2017-03-06 15:49:56 loading file ./rse_SRP030639.Rdata
+2017-03-06 15:49:58 merging RSE objects (group)
+2017-03-06 15:50:01 loading file ./rse_SRP031459.Rdata
+2017-03-06 15:50:03 loading file ./rse_SRP031476.Rdata
+2017-03-06 15:50:05 loading file ./rse_SRP031478.Rdata
+2017-03-06 15:50:07 loading file ./rse_SRP031496.Rdata
+2017-03-06 15:50:09 loading file ./rse_SRP031501.Rdata
+2017-03-06 15:50:11 loading file ./rse_SRP031503.Rdata
+2017-03-06 15:50:12 loading file ./rse_SRP031507.Rdata
+2017-03-06 15:50:14 loading file ./rse_SRP031620.Rdata
+2017-03-06 15:50:16 loading file ./rse_SRP031698.Rdata
+2017-03-06 15:50:18 loading file ./rse_SRP031776.Rdata
+2017-03-06 15:50:20 loading file ./rse_SRP031849.Rdata
+2017-03-06 15:50:22 loading file ./rse_SRP031858.Rdata
+2017-03-06 15:50:24 loading file ./rse_SRP031868.Rdata
+2017-03-06 15:50:26 loading file ./rse_SRP032165.Rdata
+2017-03-06 15:50:28 loading file ./rse_SRP032168.Rdata
+2017-03-06 15:50:29 loading file ./rse_SRP032275.Rdata
+2017-03-06 15:50:31 loading file ./rse_SRP032279.Rdata
+2017-03-06 15:50:33 loading file ./rse_SRP032280.Rdata
+2017-03-06 15:50:35 loading file ./rse_SRP032344.Rdata
+2017-03-06 15:50:37 loading file ./rse_SRP032363.Rdata
+2017-03-06 15:50:38 merging RSE objects (group)
+2017-03-06 15:50:41 loading file ./rse_SRP032367.Rdata
+2017-03-06 15:50:43 loading file ./rse_SRP032456.Rdata
+2017-03-06 15:50:45 loading file ./rse_SRP032476.Rdata
+2017-03-06 15:50:47 loading file ./rse_SRP032510.Rdata
+2017-03-06 15:50:49 loading file ./rse_SRP032539.Rdata
+2017-03-06 15:50:51 loading file ./rse_SRP032540.Rdata
+2017-03-06 15:50:53 loading file ./rse_SRP032542.Rdata
+2017-03-06 15:50:55 loading file ./rse_SRP032559.Rdata
+2017-03-06 15:50:56 loading file ./rse_SRP032743.Rdata
+2017-03-06 15:50:58 loading file ./rse_SRP032754.Rdata
+2017-03-06 15:51:00 loading file ./rse_SRP032775.Rdata
+2017-03-06 15:51:04 loading file ./rse_SRP032789.Rdata
+2017-03-06 15:51:06 loading file ./rse_SRP032798.Rdata
+2017-03-06 15:51:08 loading file ./rse_SRP032812.Rdata
+2017-03-06 15:51:10 loading file ./rse_SRP032833.Rdata
+2017-03-06 15:51:11 loading file ./rse_SRP032922.Rdata
+2017-03-06 15:51:13 loading file ./rse_SRP032928.Rdata
+2017-03-06 15:51:15 loading file ./rse_SRP032942.Rdata
+2017-03-06 15:51:17 loading file ./rse_SRP032953.Rdata
+2017-03-06 15:51:19 loading file ./rse_SRP032989.Rdata
+2017-03-06 15:51:21 loading file ./rse_SRP032999.Rdata
+2017-03-06 15:51:23 merging RSE objects (group)
+2017-03-06 15:51:25 loading file ./rse_SRP033057.Rdata
+2017-03-06 15:51:27 loading file ./rse_SRP033078.Rdata
+2017-03-06 15:51:29 loading file ./rse_SRP033095.Rdata
+2017-03-06 15:51:31 loading file ./rse_SRP033098.Rdata
+2017-03-06 15:51:33 loading file ./rse_SRP033115.Rdata
+2017-03-06 15:51:35 loading file ./rse_SRP033116.Rdata
+2017-03-06 15:51:37 loading file ./rse_SRP033117.Rdata
+2017-03-06 15:51:39 loading file ./rse_SRP033119.Rdata
+2017-03-06 15:51:41 loading file ./rse_SRP033131.Rdata
+2017-03-06 15:51:43 loading file ./rse_SRP033135.Rdata
+2017-03-06 15:51:47 loading file ./rse_SRP033199.Rdata
+2017-03-06 15:51:49 loading file ./rse_SRP033206.Rdata
+2017-03-06 15:51:51 loading file ./rse_SRP033239.Rdata
+2017-03-06 15:51:52 loading file ./rse_SRP033248.Rdata
+2017-03-06 15:51:55 loading file ./rse_SRP033250.Rdata
+2017-03-06 15:51:56 loading file ./rse_SRP033253.Rdata
+2017-03-06 15:51:58 loading file ./rse_SRP033266.Rdata
+2017-03-06 15:52:01 loading file ./rse_SRP033267.Rdata
+2017-03-06 15:52:03 loading file ./rse_SRP033276.Rdata
+2017-03-06 15:52:05 loading file ./rse_SRP033282.Rdata
+2017-03-06 15:52:07 merging RSE objects (group)
+2017-03-06 15:52:11 loading file ./rse_SRP033291.Rdata
+2017-03-06 15:52:13 loading file ./rse_SRP033305.Rdata
+2017-03-06 15:52:14 loading file ./rse_SRP033335.Rdata
+2017-03-06 15:52:16 loading file ./rse_SRP033336.Rdata
+2017-03-06 15:52:18 loading file ./rse_SRP033351.Rdata
+2017-03-06 15:52:20 loading file ./rse_SRP033365.Rdata
+2017-03-06 15:52:22 loading file ./rse_SRP033369.Rdata
+2017-03-06 15:52:24 loading file ./rse_SRP033393.Rdata
+2017-03-06 15:52:26 loading file ./rse_SRP033401.Rdata
+2017-03-06 15:52:28 loading file ./rse_SRP033432.Rdata
+2017-03-06 15:52:30 loading file ./rse_SRP033435.Rdata
+2017-03-06 15:52:32 loading file ./rse_SRP033464.Rdata
+2017-03-06 15:52:34 loading file ./rse_SRP033466.Rdata
+2017-03-06 15:52:36 loading file ./rse_SRP033491.Rdata
+2017-03-06 15:52:38 loading file ./rse_SRP033498.Rdata
+2017-03-06 15:52:39 loading file ./rse_SRP033502.Rdata
+2017-03-06 15:52:41 loading file ./rse_SRP033505.Rdata
+2017-03-06 15:52:43 loading file ./rse_SRP033511.Rdata
+2017-03-06 15:52:45 loading file ./rse_SRP033515.Rdata
+2017-03-06 15:52:47 loading file ./rse_SRP033566.Rdata
+2017-03-06 15:52:49 merging RSE objects (group)
+2017-03-06 15:52:51 loading file ./rse_SRP033569.Rdata
+2017-03-06 15:52:53 loading file ./rse_SRP033582.Rdata
+2017-03-06 15:52:55 loading file ./rse_SRP033612.Rdata
+2017-03-06 15:52:57 loading file ./rse_SRP033646.Rdata
+2017-03-06 15:52:59 loading file ./rse_SRP033647.Rdata
+2017-03-06 15:53:01 loading file ./rse_SRP033696.Rdata
+2017-03-06 15:53:03 loading file ./rse_SRP033711.Rdata
+2017-03-06 15:53:05 loading file ./rse_SRP033725.Rdata
+2017-03-06 15:53:07 loading file ./rse_SRP034007.Rdata
+2017-03-06 15:53:09 loading file ./rse_SRP034008.Rdata
+2017-03-06 15:53:11 loading file ./rse_SRP034009.Rdata
+2017-03-06 15:53:13 loading file ./rse_SRP034011.Rdata
+2017-03-06 15:53:14 loading file ./rse_SRP034013.Rdata
+2017-03-06 15:53:19 loading file ./rse_SRP034017.Rdata
+2017-03-06 15:53:21 loading file ./rse_SRP034158.Rdata
+2017-03-06 15:53:23 loading file ./rse_SRP034163.Rdata
+2017-03-06 15:53:25 loading file ./rse_SRP034528.Rdata
+2017-03-06 15:53:27 loading file ./rse_SRP034541.Rdata
+2017-03-06 15:53:29 loading file ./rse_SRP034543.Rdata
+2017-03-06 15:53:31 loading file ./rse_SRP034547.Rdata
+2017-03-06 15:53:33 merging RSE objects (group)
+2017-03-06 15:53:34 loading file ./rse_SRP034586.Rdata
+2017-03-06 15:53:36 loading file ./rse_SRP034592.Rdata
+2017-03-06 15:53:38 loading file ./rse_SRP034599.Rdata
+2017-03-06 15:53:39 loading file ./rse_SRP034601.Rdata
+2017-03-06 15:53:41 loading file ./rse_SRP034606.Rdata
+2017-03-06 15:53:43 loading file ./rse_SRP034626.Rdata
+2017-03-06 15:53:46 loading file ./rse_SRP034634.Rdata
+2017-03-06 15:53:48 loading file ./rse_SRP034657.Rdata
+2017-03-06 15:53:50 loading file ./rse_SRP034666.Rdata
+2017-03-06 15:53:52 loading file ./rse_SRP034672.Rdata
+2017-03-06 15:53:54 loading file ./rse_SRP034691.Rdata
+2017-03-06 15:53:56 loading file ./rse_SRP034698.Rdata
+2017-03-06 15:53:58 loading file ./rse_SRP034711.Rdata
+2017-03-06 15:54:00 loading file ./rse_SRP034712.Rdata
+2017-03-06 15:54:02 loading file ./rse_SRP034732.Rdata
+2017-03-06 15:54:04 loading file ./rse_SRP034736.Rdata
+2017-03-06 15:54:06 loading file ./rse_SRP034737.Rdata
+2017-03-06 15:54:08 loading file ./rse_SRP034873.Rdata
+2017-03-06 15:54:10 loading file ./rse_SRP034875.Rdata
+2017-03-06 15:54:12 loading file ./rse_SRP034929.Rdata
+2017-03-06 15:54:14 merging RSE objects (group)
+2017-03-06 15:54:17 loading file ./rse_SRP034953.Rdata
+2017-03-06 15:54:19 loading file ./rse_SRP035224.Rdata
+2017-03-06 15:54:22 loading file ./rse_SRP035252.Rdata
+2017-03-06 15:54:23 loading file ./rse_SRP035255.Rdata
+2017-03-06 15:54:25 loading file ./rse_SRP035268.Rdata
+2017-03-06 15:54:27 loading file ./rse_SRP035276.Rdata
+2017-03-06 15:54:29 loading file ./rse_SRP035285.Rdata
+2017-03-06 15:54:31 loading file ./rse_SRP035287.Rdata
+2017-03-06 15:54:33 loading file ./rse_SRP035312.Rdata
+2017-03-06 15:54:36 loading file ./rse_SRP035316.Rdata
+2017-03-06 15:54:38 loading file ./rse_SRP035387.Rdata
+2017-03-06 15:54:39 loading file ./rse_SRP035391.Rdata
+2017-03-06 15:54:42 loading file ./rse_SRP035417.Rdata
+2017-03-06 15:54:44 loading file ./rse_SRP035419.Rdata
+2017-03-06 15:54:46 loading file ./rse_SRP035452.Rdata
+2017-03-06 15:54:48 loading file ./rse_SRP035453.Rdata
+2017-03-06 15:54:50 loading file ./rse_SRP035454.Rdata
+2017-03-06 15:54:52 loading file ./rse_SRP035455.Rdata
+2017-03-06 15:54:54 loading file ./rse_SRP035461.Rdata
+2017-03-06 15:54:55 loading file ./rse_SRP035464.Rdata
+2017-03-06 15:54:57 merging RSE objects (group)
+2017-03-06 15:54:59 loading file ./rse_SRP035477.Rdata
+2017-03-06 15:55:01 loading file ./rse_SRP035478.Rdata
+2017-03-06 15:55:03 loading file ./rse_SRP035482.Rdata
+2017-03-06 15:55:05 loading file ./rse_SRP035503.Rdata
+2017-03-06 15:55:07 loading file ./rse_SRP035524.Rdata
+2017-03-06 15:55:09 loading file ./rse_SRP035554.Rdata
+2017-03-06 15:55:12 loading file ./rse_SRP035599.Rdata
+2017-03-06 15:55:14 loading file ./rse_SRP035617.Rdata
+2017-03-06 15:55:16 loading file ./rse_SRP035634.Rdata
+2017-03-06 15:55:18 loading file ./rse_SRP035638.Rdata
+2017-03-06 15:55:20 loading file ./rse_SRP035641.Rdata
+2017-03-06 15:55:22 loading file ./rse_SRP035665.Rdata
+2017-03-06 15:55:24 loading file ./rse_SRP035670.Rdata
+2017-03-06 15:55:26 loading file ./rse_SRP035679.Rdata
+2017-03-06 15:55:27 loading file ./rse_SRP035862.Rdata
+2017-03-06 15:55:29 loading file ./rse_SRP035864.Rdata
+2017-03-06 15:55:31 loading file ./rse_SRP035883.Rdata
+2017-03-06 15:55:33 loading file ./rse_SRP035930.Rdata
+2017-03-06 15:55:35 loading file ./rse_SRP035934.Rdata
+2017-03-06 15:55:38 loading file ./rse_SRP035988.Rdata
+2017-03-06 15:55:41 merging RSE objects (group)
+2017-03-06 15:55:44 loading file ./rse_SRP036029.Rdata
+2017-03-06 15:55:46 loading file ./rse_SRP036035.Rdata
+2017-03-06 15:55:48 loading file ./rse_SRP036053.Rdata
+2017-03-06 15:55:50 loading file ./rse_SRP036133.Rdata
+2017-03-06 15:55:52 loading file ./rse_SRP036136.Rdata
+2017-03-06 15:55:54 loading file ./rse_SRP036145.Rdata
+2017-03-06 15:55:56 loading file ./rse_SRP036595.Rdata
+2017-03-06 15:55:58 loading file ./rse_SRP036769.Rdata
+2017-03-06 15:56:00 loading file ./rse_SRP036790.Rdata
+2017-03-06 15:56:02 loading file ./rse_SRP036821.Rdata
+2017-03-06 15:56:04 loading file ./rse_SRP036840.Rdata
+2017-03-06 15:56:06 loading file ./rse_SRP036843.Rdata
+2017-03-06 15:56:08 loading file ./rse_SRP036848.Rdata
+2017-03-06 15:56:11 loading file ./rse_SRP037550.Rdata
+2017-03-06 15:56:13 loading file ./rse_SRP037553.Rdata
+2017-03-06 15:56:15 loading file ./rse_SRP037579.Rdata
+2017-03-06 15:56:17 loading file ./rse_SRP037718.Rdata
+2017-03-06 15:56:19 loading file ./rse_SRP037719.Rdata
+2017-03-06 15:56:21 loading file ./rse_SRP037722.Rdata
+2017-03-06 15:56:23 loading file ./rse_SRP037735.Rdata
+2017-03-06 15:56:25 loading file ./rse_SRP037762.Rdata
+2017-03-06 15:56:27 merging RSE objects (group)
+2017-03-06 15:56:30 loading file ./rse_SRP037775.Rdata
+2017-03-06 15:56:32 loading file ./rse_SRP037778.Rdata
+2017-03-06 15:56:34 loading file ./rse_SRP037971.Rdata
+2017-03-06 15:56:36 loading file ./rse_SRP037982.Rdata
+2017-03-06 15:56:38 loading file ./rse_SRP038006.Rdata
+2017-03-06 15:56:40 loading file ./rse_SRP038101.Rdata
+2017-03-06 15:56:42 loading file ./rse_SRP038143.Rdata
+2017-03-06 15:56:44 loading file ./rse_SRP038695.Rdata
+2017-03-06 15:56:46 loading file ./rse_SRP038702.Rdata
+2017-03-06 15:56:48 loading file ./rse_SRP038726.Rdata
+2017-03-06 15:56:50 loading file ./rse_SRP038759.Rdata
+2017-03-06 15:56:52 loading file ./rse_SRP038761.Rdata
+2017-03-06 15:56:54 loading file ./rse_SRP038767.Rdata
+2017-03-06 15:56:56 loading file ./rse_SRP038863.Rdata
+2017-03-06 15:56:58 loading file ./rse_SRP038919.Rdata
+2017-03-06 15:57:00 loading file ./rse_SRP038921.Rdata
+2017-03-06 15:57:02 loading file ./rse_SRP038925.Rdata
+2017-03-06 15:57:04 loading file ./rse_SRP038963.Rdata
+2017-03-06 15:57:06 loading file ./rse_SRP038964.Rdata
+2017-03-06 15:57:08 loading file ./rse_SRP038969.Rdata
+2017-03-06 15:57:10 merging RSE objects (group)
+2017-03-06 15:57:12 loading file ./rse_SRP038987.Rdata
+2017-03-06 15:57:14 loading file ./rse_SRP039039.Rdata
+2017-03-06 15:57:16 loading file ./rse_SRP039077.Rdata
+2017-03-06 15:57:18 loading file ./rse_SRP039085.Rdata
+2017-03-06 15:57:20 loading file ./rse_SRP039338.Rdata
+2017-03-06 15:57:22 loading file ./rse_SRP039346.Rdata
+2017-03-06 15:57:24 loading file ./rse_SRP039348.Rdata
+2017-03-06 15:57:26 loading file ./rse_SRP039354.Rdata
+2017-03-06 15:57:28 loading file ./rse_SRP039357.Rdata
+2017-03-06 15:57:30 loading file ./rse_SRP039359.Rdata
+2017-03-06 15:57:32 loading file ./rse_SRP039361.Rdata
+2017-03-06 15:57:34 loading file ./rse_SRP039397.Rdata
+2017-03-06 15:57:37 loading file ./rse_SRP039399.Rdata
+2017-03-06 15:57:38 loading file ./rse_SRP039460.Rdata
+2017-03-06 15:57:40 loading file ./rse_SRP039552.Rdata
+2017-03-06 15:57:42 loading file ./rse_SRP039559.Rdata
+2017-03-06 15:57:44 loading file ./rse_SRP039591.Rdata
+2017-03-06 15:57:46 loading file ./rse_SRP039598.Rdata
+2017-03-06 15:57:48 loading file ./rse_SRP039694.Rdata
+2017-03-06 15:57:50 loading file ./rse_SRP039909.Rdata
+2017-03-06 15:57:52 merging RSE objects (group)
+2017-03-06 15:57:55 loading file ./rse_SRP040014.Rdata
+2017-03-06 15:57:57 loading file ./rse_SRP040070.Rdata
+2017-03-06 15:58:00 loading file ./rse_SRP040110.Rdata
+2017-03-06 15:58:02 loading file ./rse_SRP040117.Rdata
+2017-03-06 15:58:04 loading file ./rse_SRP040136.Rdata
+2017-03-06 15:58:06 loading file ./rse_SRP040145.Rdata
+2017-03-06 15:58:08 loading file ./rse_SRP040236.Rdata
+2017-03-06 15:58:10 loading file ./rse_SRP040243.Rdata
+2017-03-06 15:58:11 loading file ./rse_SRP040275.Rdata
+2017-03-06 15:58:13 loading file ./rse_SRP040278.Rdata
+2017-03-06 15:58:15 loading file ./rse_SRP040288.Rdata
+2017-03-06 15:58:18 loading file ./rse_SRP040292.Rdata
+2017-03-06 15:58:20 loading file ./rse_SRP040300.Rdata
+2017-03-06 15:58:21 loading file ./rse_SRP040309.Rdata
+2017-03-06 15:58:24 loading file ./rse_SRP040327.Rdata
+2017-03-06 15:58:25 loading file ./rse_SRP040328.Rdata
+2017-03-06 15:58:28 loading file ./rse_SRP040418.Rdata
+2017-03-06 15:58:30 loading file ./rse_SRP040421.Rdata
+2017-03-06 15:58:32 loading file ./rse_SRP040442.Rdata
+2017-03-06 15:58:34 loading file ./rse_SRP040454.Rdata
+2017-03-06 15:58:36 merging RSE objects (group)
+2017-03-06 15:58:38 loading file ./rse_SRP040472.Rdata
+2017-03-06 15:58:42 loading file ./rse_SRP040505.Rdata
+2017-03-06 15:58:44 loading file ./rse_SRP040525.Rdata
+2017-03-06 15:58:46 loading file ./rse_SRP040547.Rdata
+2017-03-06 15:58:49 loading file ./rse_SRP040550.Rdata
+2017-03-06 15:58:51 loading file ./rse_SRP040577.Rdata
+2017-03-06 15:58:53 loading file ./rse_SRP040586.Rdata
+2017-03-06 15:58:55 loading file ./rse_SRP040622.Rdata
+2017-03-06 15:58:58 loading file ./rse_SRP040647.Rdata
+2017-03-06 15:58:59 loading file ./rse_SRP040679.Rdata
+2017-03-06 15:59:01 loading file ./rse_SRP040692.Rdata
+2017-03-06 15:59:03 loading file ./rse_SRP040694.Rdata
+2017-03-06 15:59:05 loading file ./rse_SRP040702.Rdata
+2017-03-06 15:59:07 loading file ./rse_SRP040704.Rdata
+2017-03-06 15:59:09 loading file ./rse_SRP040745.Rdata
+2017-03-06 15:59:11 loading file ./rse_SRP040764.Rdata
+2017-03-06 15:59:13 loading file ./rse_SRP040772.Rdata
+2017-03-06 15:59:15 loading file ./rse_SRP040806.Rdata
+2017-03-06 15:59:18 loading file ./rse_SRP040966.Rdata
+2017-03-06 15:59:19 loading file ./rse_SRP040998.Rdata
+2017-03-06 15:59:22 merging RSE objects (group)
+2017-03-06 15:59:24 loading file ./rse_SRP041008.Rdata
+2017-03-06 15:59:26 loading file ./rse_SRP041036.Rdata
+2017-03-06 15:59:28 loading file ./rse_SRP041044.Rdata
+2017-03-06 15:59:30 loading file ./rse_SRP041057.Rdata
+2017-03-06 15:59:32 loading file ./rse_SRP041063.Rdata
+2017-03-06 15:59:34 loading file ./rse_SRP041094.Rdata
+2017-03-06 15:59:36 loading file ./rse_SRP041100.Rdata
+2017-03-06 15:59:38 loading file ./rse_SRP041102.Rdata
+2017-03-06 15:59:40 loading file ./rse_SRP041130.Rdata
+2017-03-06 15:59:41 loading file ./rse_SRP041159.Rdata
+2017-03-06 15:59:43 loading file ./rse_SRP041162.Rdata
+2017-03-06 15:59:46 loading file ./rse_SRP041179.Rdata
+2017-03-06 15:59:48 loading file ./rse_SRP041210.Rdata
+2017-03-06 15:59:49 loading file ./rse_SRP041228.Rdata
+2017-03-06 15:59:51 loading file ./rse_SRP041255.Rdata
+2017-03-06 15:59:53 loading file ./rse_SRP041263.Rdata
+2017-03-06 15:59:55 loading file ./rse_SRP041272.Rdata
+2017-03-06 15:59:57 loading file ./rse_SRP041298.Rdata
+2017-03-06 15:59:59 loading file ./rse_SRP041338.Rdata
+2017-03-06 16:00:01 loading file ./rse_SRP041367.Rdata
+2017-03-06 16:00:03 merging RSE objects (group)
+2017-03-06 16:00:05 loading file ./rse_SRP041377.Rdata
+2017-03-06 16:00:07 loading file ./rse_SRP041387.Rdata
+2017-03-06 16:00:09 loading file ./rse_SRP041396.Rdata
+2017-03-06 16:00:11 loading file ./rse_SRP041469.Rdata
+2017-03-06 16:00:13 loading file ./rse_SRP041471.Rdata
+2017-03-06 16:00:17 loading file ./rse_SRP041474.Rdata
+2017-03-06 16:00:18 loading file ./rse_SRP041475.Rdata
+2017-03-06 16:00:20 loading file ./rse_SRP041494.Rdata
+2017-03-06 16:00:22 loading file ./rse_SRP041508.Rdata
+2017-03-06 16:00:24 loading file ./rse_SRP041531.Rdata
+2017-03-06 16:00:26 loading file ./rse_SRP041538.Rdata
+2017-03-06 16:00:29 loading file ./rse_SRP041573.Rdata
+2017-03-06 16:00:30 loading file ./rse_SRP041594.Rdata
+2017-03-06 16:00:32 loading file ./rse_SRP041597.Rdata
+2017-03-06 16:00:34 loading file ./rse_SRP041620.Rdata
+2017-03-06 16:00:36 loading file ./rse_SRP041647.Rdata
+2017-03-06 16:00:38 loading file ./rse_SRP041656.Rdata
+2017-03-06 16:00:39 loading file ./rse_SRP041675.Rdata
+2017-03-06 16:00:42 loading file ./rse_SRP041694.Rdata
+2017-03-06 16:00:44 loading file ./rse_SRP041706.Rdata
+2017-03-06 16:00:46 merging RSE objects (group)
+2017-03-06 16:00:49 loading file ./rse_SRP041718.Rdata
+2017-03-06 16:00:51 loading file ./rse_SRP041736.Rdata
+2017-03-06 16:00:57 loading file ./rse_SRP041738.Rdata
+2017-03-06 16:00:58 loading file ./rse_SRP041742.Rdata
+2017-03-06 16:01:00 loading file ./rse_SRP041751.Rdata
+2017-03-06 16:01:02 loading file ./rse_SRP041753.Rdata
+2017-03-06 16:01:04 loading file ./rse_SRP041788.Rdata
+2017-03-06 16:01:06 loading file ./rse_SRP041819.Rdata
+2017-03-06 16:01:08 loading file ./rse_SRP041820.Rdata
+2017-03-06 16:01:10 loading file ./rse_SRP041825.Rdata
+2017-03-06 16:01:12 loading file ./rse_SRP041826.Rdata
+2017-03-06 16:01:14 loading file ./rse_SRP041833.Rdata
+2017-03-06 16:01:16 loading file ./rse_SRP041840.Rdata
+2017-03-06 16:01:18 loading file ./rse_SRP041846.Rdata
+2017-03-06 16:01:19 loading file ./rse_SRP041885.Rdata
+2017-03-06 16:01:22 loading file ./rse_SRP041943.Rdata
+2017-03-06 16:01:23 loading file ./rse_SRP041955.Rdata
+2017-03-06 16:01:26 loading file ./rse_SRP041956.Rdata
+2017-03-06 16:01:28 loading file ./rse_SRP041962.Rdata
+2017-03-06 16:01:29 loading file ./rse_SRP041988.Rdata
+2017-03-06 16:01:31 loading file ./rse_SRP041990.Rdata
+2017-03-06 16:01:33 merging RSE objects (group)
+2017-03-06 16:01:40 loading file ./rse_SRP042027.Rdata
+2017-03-06 16:01:42 loading file ./rse_SRP042031.Rdata
+2017-03-06 16:01:44 loading file ./rse_SRP042043.Rdata
+2017-03-06 16:01:46 loading file ./rse_SRP042086.Rdata
+2017-03-06 16:01:48 loading file ./rse_SRP042104.Rdata
+2017-03-06 16:01:50 loading file ./rse_SRP042119.Rdata
+2017-03-06 16:01:52 loading file ./rse_SRP042150.Rdata
+2017-03-06 16:01:54 loading file ./rse_SRP042153.Rdata
+2017-03-06 16:01:56 loading file ./rse_SRP042161.Rdata
+2017-03-06 16:02:03 loading file ./rse_SRP042184.Rdata
+2017-03-06 16:02:05 loading file ./rse_SRP042186.Rdata
+2017-03-06 16:02:07 loading file ./rse_SRP042199.Rdata
+2017-03-06 16:02:09 loading file ./rse_SRP042212.Rdata
+2017-03-06 16:02:11 loading file ./rse_SRP042218.Rdata
+2017-03-06 16:02:13 loading file ./rse_SRP042228.Rdata
+2017-03-06 16:02:17 loading file ./rse_SRP042249.Rdata
+2017-03-06 16:02:19 loading file ./rse_SRP042286.Rdata
+2017-03-06 16:02:21 loading file ./rse_SRP042297.Rdata
+2017-03-06 16:02:23 loading file ./rse_SRP042303.Rdata
+2017-03-06 16:02:25 loading file ./rse_SRP042402.Rdata
+2017-03-06 16:02:27 merging RSE objects (group)
+2017-03-06 16:02:33 loading file ./rse_SRP042579.Rdata
+2017-03-06 16:02:35 loading file ./rse_SRP042596.Rdata
+2017-03-06 16:02:38 loading file ./rse_SRP042597.Rdata
+2017-03-06 16:02:40 loading file ./rse_SRP042616.Rdata
+2017-03-06 16:02:42 loading file ./rse_SRP042620.Rdata
+2017-03-06 16:02:45 loading file ./rse_SRP042623.Rdata
+2017-03-06 16:02:47 loading file ./rse_SRP042630.Rdata
+2017-03-06 16:02:49 loading file ./rse_SRP042647.Rdata
+2017-03-06 16:02:51 loading file ./rse_SRP042937.Rdata
+2017-03-06 16:02:53 loading file ./rse_SRP043008.Rdata
+2017-03-06 16:02:55 loading file ./rse_SRP043021.Rdata
+2017-03-06 16:02:57 loading file ./rse_SRP043027.Rdata
+2017-03-06 16:02:59 loading file ./rse_SRP043033.Rdata
+2017-03-06 16:03:01 loading file ./rse_SRP043041.Rdata
+2017-03-06 16:03:03 loading file ./rse_SRP043043.Rdata
+2017-03-06 16:03:05 loading file ./rse_SRP043078.Rdata
+2017-03-06 16:03:07 loading file ./rse_SRP043080.Rdata
+2017-03-06 16:03:09 loading file ./rse_SRP043081.Rdata
+2017-03-06 16:03:11 loading file ./rse_SRP043085.Rdata
+2017-03-06 16:03:13 loading file ./rse_SRP043090.Rdata
+2017-03-06 16:03:15 merging RSE objects (group)
+2017-03-06 16:03:17 loading file ./rse_SRP043108.Rdata
+2017-03-06 16:03:20 loading file ./rse_SRP043144.Rdata
+2017-03-06 16:03:22 loading file ./rse_SRP043162.Rdata
+2017-03-06 16:03:24 loading file ./rse_SRP043166.Rdata
+2017-03-06 16:03:26 loading file ./rse_SRP043188.Rdata
+2017-03-06 16:03:28 loading file ./rse_SRP043221.Rdata
+2017-03-06 16:03:30 loading file ./rse_SRP043273.Rdata
+2017-03-06 16:03:32 loading file ./rse_SRP043320.Rdata
+2017-03-06 16:03:34 loading file ./rse_SRP043336.Rdata
+2017-03-06 16:03:35 loading file ./rse_SRP043339.Rdata
+2017-03-06 16:03:37 loading file ./rse_SRP043364.Rdata
+2017-03-06 16:03:40 loading file ./rse_SRP043368.Rdata
+2017-03-06 16:03:42 loading file ./rse_SRP043378.Rdata
+2017-03-06 16:03:44 loading file ./rse_SRP043388.Rdata
+2017-03-06 16:03:46 loading file ./rse_SRP043391.Rdata
+2017-03-06 16:03:48 loading file ./rse_SRP043417.Rdata
+2017-03-06 16:03:50 loading file ./rse_SRP043434.Rdata
+2017-03-06 16:03:52 loading file ./rse_SRP043470.Rdata
+2017-03-06 16:03:54 loading file ./rse_SRP043510.Rdata
+2017-03-06 16:03:56 loading file ./rse_SRP043513.Rdata
+2017-03-06 16:03:57 merging RSE objects (group)
+2017-03-06 16:04:01 loading file ./rse_SRP043578.Rdata
+2017-03-06 16:04:03 loading file ./rse_SRP043593.Rdata
+2017-03-06 16:04:05 loading file ./rse_SRP043621.Rdata
+2017-03-06 16:04:07 loading file ./rse_SRP043644.Rdata
+2017-03-06 16:04:09 loading file ./rse_SRP043684.Rdata
+2017-03-06 16:04:11 loading file ./rse_SRP043686.Rdata
+2017-03-06 16:04:13 loading file ./rse_SRP043688.Rdata
+2017-03-06 16:04:15 loading file ./rse_SRP043694.Rdata
+2017-03-06 16:04:17 loading file ./rse_SRP043960.Rdata
+2017-03-06 16:04:19 loading file ./rse_SRP043961.Rdata
+2017-03-06 16:04:21 loading file ./rse_SRP043962.Rdata
+2017-03-06 16:04:23 loading file ./rse_SRP044013.Rdata
+2017-03-06 16:04:25 loading file ./rse_SRP044042.Rdata
+2017-03-06 16:04:27 loading file ./rse_SRP044056.Rdata
+2017-03-06 16:04:28 loading file ./rse_SRP044084.Rdata
+2017-03-06 16:04:30 loading file ./rse_SRP044113.Rdata
+2017-03-06 16:04:32 loading file ./rse_SRP044171.Rdata
+2017-03-06 16:04:34 loading file ./rse_SRP044174.Rdata
+2017-03-06 16:04:36 loading file ./rse_SRP044187.Rdata
+2017-03-06 16:04:38 loading file ./rse_SRP044206.Rdata
+2017-03-06 16:04:40 merging RSE objects (group)
+2017-03-06 16:04:42 loading file ./rse_SRP044229.Rdata
+2017-03-06 16:04:43 loading file ./rse_SRP044241.Rdata
+2017-03-06 16:04:45 loading file ./rse_SRP044265.Rdata
+2017-03-06 16:04:47 loading file ./rse_SRP044271.Rdata
+2017-03-06 16:04:49 loading file ./rse_SRP044286.Rdata
+2017-03-06 16:04:51 loading file ./rse_SRP044296.Rdata
+2017-03-06 16:04:53 loading file ./rse_SRP044298.Rdata
+2017-03-06 16:04:55 loading file ./rse_SRP044303.Rdata
+2017-03-06 16:04:57 loading file ./rse_SRP044391.Rdata
+2017-03-06 16:04:59 loading file ./rse_SRP044593.Rdata
+2017-03-06 16:05:01 loading file ./rse_SRP044608.Rdata
+2017-03-06 16:05:03 loading file ./rse_SRP044610.Rdata
+2017-03-06 16:05:05 loading file ./rse_SRP044611.Rdata
+2017-03-06 16:05:07 loading file ./rse_SRP044653.Rdata
+2017-03-06 16:05:09 loading file ./rse_SRP044661.Rdata
+2017-03-06 16:05:11 loading file ./rse_SRP044668.Rdata
+2017-03-06 16:05:13 loading file ./rse_SRP044673.Rdata
+2017-03-06 16:05:15 loading file ./rse_SRP044679.Rdata
+2017-03-06 16:05:17 loading file ./rse_SRP044708.Rdata
+2017-03-06 16:05:19 loading file ./rse_SRP044715.Rdata
+2017-03-06 16:05:21 merging RSE objects (group)
+2017-03-06 16:05:23 loading file ./rse_SRP044749.Rdata
+2017-03-06 16:05:25 loading file ./rse_SRP044756.Rdata
+2017-03-06 16:05:27 loading file ./rse_SRP044763.Rdata
+2017-03-06 16:05:29 loading file ./rse_SRP044766.Rdata
+2017-03-06 16:05:31 loading file ./rse_SRP044809.Rdata
+2017-03-06 16:05:33 loading file ./rse_SRP044854.Rdata
+2017-03-06 16:05:35 loading file ./rse_SRP044867.Rdata
+2017-03-06 16:05:37 loading file ./rse_SRP044917.Rdata
+2017-03-06 16:05:39 loading file ./rse_SRP044925.Rdata
+2017-03-06 16:05:41 loading file ./rse_SRP044956.Rdata
+2017-03-06 16:05:43 loading file ./rse_SRP045048.Rdata
+2017-03-06 16:05:45 loading file ./rse_SRP045052.Rdata
+2017-03-06 16:05:47 loading file ./rse_SRP045065.Rdata
+2017-03-06 16:05:48 loading file ./rse_SRP045118.Rdata
+2017-03-06 16:05:50 loading file ./rse_SRP045126.Rdata
+2017-03-06 16:05:52 loading file ./rse_SRP045154.Rdata
+2017-03-06 16:05:54 loading file ./rse_SRP045155.Rdata
+2017-03-06 16:05:56 loading file ./rse_SRP045156.Rdata
+2017-03-06 16:05:58 loading file ./rse_SRP045204.Rdata
+2017-03-06 16:06:00 loading file ./rse_SRP045207.Rdata
+2017-03-06 16:06:01 merging RSE objects (group)
+2017-03-06 16:06:06 loading file ./rse_SRP045214.Rdata
+2017-03-06 16:06:08 loading file ./rse_SRP045222.Rdata
+2017-03-06 16:06:09 loading file ./rse_SRP045234.Rdata
+2017-03-06 16:06:11 loading file ./rse_SRP045257.Rdata
+2017-03-06 16:06:13 loading file ./rse_SRP045269.Rdata
+2017-03-06 16:06:15 loading file ./rse_SRP045276.Rdata
+2017-03-06 16:06:17 loading file ./rse_SRP045294.Rdata
+2017-03-06 16:06:18 loading file ./rse_SRP045308.Rdata
+2017-03-06 16:06:20 loading file ./rse_SRP045318.Rdata
+2017-03-06 16:06:22 loading file ./rse_SRP045322.Rdata
+2017-03-06 16:06:24 loading file ./rse_SRP045329.Rdata
+2017-03-06 16:06:25 loading file ./rse_SRP045330.Rdata
+2017-03-06 16:06:27 loading file ./rse_SRP045352.Rdata
+2017-03-06 16:06:29 loading file ./rse_SRP045364.Rdata
+2017-03-06 16:06:31 loading file ./rse_SRP045391.Rdata
+2017-03-06 16:06:33 loading file ./rse_SRP045406.Rdata
+2017-03-06 16:06:35 loading file ./rse_SRP045421.Rdata
+2017-03-06 16:06:37 loading file ./rse_SRP045441.Rdata
+2017-03-06 16:06:38 loading file ./rse_SRP045481.Rdata
+2017-03-06 16:06:40 loading file ./rse_SRP045500.Rdata
+2017-03-06 16:06:43 loading file ./rse_SRP045501.Rdata
+2017-03-06 16:06:45 merging RSE objects (group)
+2017-03-06 16:06:47 loading file ./rse_SRP045545.Rdata
+2017-03-06 16:06:49 loading file ./rse_SRP045561.Rdata
+2017-03-06 16:06:51 loading file ./rse_SRP045565.Rdata
+2017-03-06 16:06:53 loading file ./rse_SRP045569.Rdata
+2017-03-06 16:06:55 loading file ./rse_SRP045570.Rdata
+2017-03-06 16:06:57 loading file ./rse_SRP045573.Rdata
+2017-03-06 16:06:58 loading file ./rse_SRP045590.Rdata
+2017-03-06 16:07:00 loading file ./rse_SRP045592.Rdata
+2017-03-06 16:07:02 loading file ./rse_SRP045610.Rdata
+2017-03-06 16:07:04 loading file ./rse_SRP045611.Rdata
+2017-03-06 16:07:06 loading file ./rse_SRP045624.Rdata
+2017-03-06 16:07:07 loading file ./rse_SRP045632.Rdata
+2017-03-06 16:07:09 loading file ./rse_SRP045638.Rdata
+2017-03-06 16:07:12 loading file ./rse_SRP045639.Rdata
+2017-03-06 16:07:13 loading file ./rse_SRP045645.Rdata
+2017-03-06 16:07:15 loading file ./rse_SRP045655.Rdata
+2017-03-06 16:07:17 loading file ./rse_SRP045659.Rdata
+2017-03-06 16:07:19 loading file ./rse_SRP045663.Rdata
+2017-03-06 16:07:21 loading file ./rse_SRP045666.Rdata
+2017-03-06 16:07:23 loading file ./rse_SRP045673.Rdata
+2017-03-06 16:07:25 merging RSE objects (group)
+2017-03-06 16:07:27 loading file ./rse_SRP045695.Rdata
+2017-03-06 16:07:30 loading file ./rse_SRP045711.Rdata
+2017-03-06 16:07:32 loading file ./rse_SRP045785.Rdata
+2017-03-06 16:07:33 loading file ./rse_SRP045823.Rdata
+2017-03-06 16:07:36 loading file ./rse_SRP045859.Rdata
+2017-03-06 16:07:38 loading file ./rse_SRP045867.Rdata
+2017-03-06 16:07:39 loading file ./rse_SRP045869.Rdata
+2017-03-06 16:07:41 loading file ./rse_SRP045870.Rdata
+2017-03-06 16:07:43 loading file ./rse_SRP045876.Rdata
+2017-03-06 16:07:45 loading file ./rse_SRP045898.Rdata
+2017-03-06 16:07:47 loading file ./rse_SRP045900.Rdata
+2017-03-06 16:07:48 loading file ./rse_SRP045905.Rdata
+2017-03-06 16:07:50 loading file ./rse_SRP045911.Rdata
+2017-03-06 16:07:52 loading file ./rse_SRP045949.Rdata
+2017-03-06 16:07:54 loading file ./rse_SRP045983.Rdata
+2017-03-06 16:07:56 loading file ./rse_SRP045986.Rdata
+2017-03-06 16:07:58 loading file ./rse_SRP045999.Rdata
+2017-03-06 16:08:00 loading file ./rse_SRP046000.Rdata
+2017-03-06 16:08:02 loading file ./rse_SRP046066.Rdata
+2017-03-06 16:08:04 loading file ./rse_SRP046226.Rdata
+2017-03-06 16:08:06 merging RSE objects (group)
+2017-03-06 16:08:09 loading file ./rse_SRP046233.Rdata
+2017-03-06 16:08:11 loading file ./rse_SRP046254.Rdata
+2017-03-06 16:08:13 loading file ./rse_SRP046266.Rdata
+2017-03-06 16:08:15 loading file ./rse_SRP046271.Rdata
+2017-03-06 16:08:17 loading file ./rse_SRP046293.Rdata
+2017-03-06 16:08:18 loading file ./rse_SRP046376.Rdata
+2017-03-06 16:08:20 loading file ./rse_SRP046741.Rdata
+2017-03-06 16:08:22 loading file ./rse_SRP046749.Rdata
+2017-03-06 16:08:24 loading file ./rse_SRP047065.Rdata
+2017-03-06 16:08:26 loading file ./rse_SRP047082.Rdata
+2017-03-06 16:08:28 loading file ./rse_SRP047097.Rdata
+2017-03-06 16:08:30 loading file ./rse_SRP047124.Rdata
+2017-03-06 16:08:32 loading file ./rse_SRP047126.Rdata
+2017-03-06 16:08:33 loading file ./rse_SRP047174.Rdata
+2017-03-06 16:08:35 loading file ./rse_SRP047192.Rdata
+2017-03-06 16:08:37 loading file ./rse_SRP047194.Rdata
+2017-03-06 16:08:39 loading file ./rse_SRP047233.Rdata
+2017-03-06 16:08:42 loading file ./rse_SRP047266.Rdata
+2017-03-06 16:08:43 loading file ./rse_SRP047271.Rdata
+2017-03-06 16:08:45 loading file ./rse_SRP047299.Rdata
+2017-03-06 16:08:47 merging RSE objects (group)
+2017-03-06 16:08:49 loading file ./rse_SRP047307.Rdata
+2017-03-06 16:08:51 loading file ./rse_SRP047323.Rdata
+2017-03-06 16:08:52 loading file ./rse_SRP047339.Rdata
+2017-03-06 16:08:54 loading file ./rse_SRP047358.Rdata
+2017-03-06 16:08:56 loading file ./rse_SRP047363.Rdata
+2017-03-06 16:08:58 loading file ./rse_SRP047366.Rdata
+2017-03-06 16:09:00 loading file ./rse_SRP047383.Rdata
+2017-03-06 16:09:02 loading file ./rse_SRP047399.Rdata
+2017-03-06 16:09:03 loading file ./rse_SRP047407.Rdata
+2017-03-06 16:09:05 loading file ./rse_SRP047422.Rdata
+2017-03-06 16:09:07 loading file ./rse_SRP047429.Rdata
+2017-03-06 16:09:09 loading file ./rse_SRP047459.Rdata
+2017-03-06 16:09:11 loading file ./rse_SRP047476.Rdata
+2017-03-06 16:09:13 loading file ./rse_SRP047494.Rdata
+2017-03-06 16:09:15 loading file ./rse_SRP047516.Rdata
+2017-03-06 16:09:17 loading file ./rse_SRP047519.Rdata
+2017-03-06 16:09:19 loading file ./rse_SRP048222.Rdata
+2017-03-06 16:09:21 loading file ./rse_SRP048484.Rdata
+2017-03-06 16:09:23 loading file ./rse_SRP048536.Rdata
+2017-03-06 16:09:24 loading file ./rse_SRP048556.Rdata
+2017-03-06 16:09:26 merging RSE objects (group)
+2017-03-06 16:09:28 loading file ./rse_SRP048557.Rdata
+2017-03-06 16:09:30 loading file ./rse_SRP048562.Rdata
+2017-03-06 16:09:32 loading file ./rse_SRP048577.Rdata
+2017-03-06 16:09:34 loading file ./rse_SRP048603.Rdata
+2017-03-06 16:09:36 loading file ./rse_SRP048604.Rdata
+2017-03-06 16:09:38 loading file ./rse_SRP048630.Rdata
+2017-03-06 16:09:40 loading file ./rse_SRP048640.Rdata
+2017-03-06 16:09:41 loading file ./rse_SRP048660.Rdata
+2017-03-06 16:09:43 loading file ./rse_SRP048664.Rdata
+2017-03-06 16:09:45 loading file ./rse_SRP048669.Rdata
+2017-03-06 16:09:47 loading file ./rse_SRP048674.Rdata
+2017-03-06 16:09:49 loading file ./rse_SRP048683.Rdata
+2017-03-06 16:09:51 loading file ./rse_SRP048685.Rdata
+2017-03-06 16:09:53 loading file ./rse_SRP048700.Rdata
+2017-03-06 16:09:54 loading file ./rse_SRP048701.Rdata
+2017-03-06 16:09:56 loading file ./rse_SRP048735.Rdata
+2017-03-06 16:09:58 loading file ./rse_SRP048744.Rdata
+2017-03-06 16:10:00 loading file ./rse_SRP048759.Rdata
+2017-03-06 16:10:05 loading file ./rse_SRP048761.Rdata
+2017-03-06 16:10:07 loading file ./rse_SRP048801.Rdata
+2017-03-06 16:10:11 merging RSE objects (group)
+2017-03-06 16:10:15 loading file ./rse_SRP048804.Rdata
+2017-03-06 16:10:17 loading file ./rse_SRP048811.Rdata
+2017-03-06 16:10:19 loading file ./rse_SRP048820.Rdata
+2017-03-06 16:10:21 loading file ./rse_SRP048825.Rdata
+2017-03-06 16:10:23 loading file ./rse_SRP048842.Rdata
+2017-03-06 16:10:25 loading file ./rse_SRP048858.Rdata
+2017-03-06 16:10:27 loading file ./rse_SRP048889.Rdata
+2017-03-06 16:10:29 loading file ./rse_SRP048957.Rdata
+2017-03-06 16:10:30 loading file ./rse_SRP048971.Rdata
+2017-03-06 16:10:32 loading file ./rse_SRP048993.Rdata
+2017-03-06 16:10:34 loading file ./rse_SRP049004.Rdata
+2017-03-06 16:10:36 loading file ./rse_SRP049028.Rdata
+2017-03-06 16:10:38 loading file ./rse_SRP049061.Rdata
+2017-03-06 16:10:40 loading file ./rse_SRP049063.Rdata
+2017-03-06 16:10:42 loading file ./rse_SRP049068.Rdata
+2017-03-06 16:10:44 loading file ./rse_SRP049090.Rdata
+2017-03-06 16:10:46 loading file ./rse_SRP049097.Rdata
+2017-03-06 16:10:48 loading file ./rse_SRP049156.Rdata
+2017-03-06 16:10:50 loading file ./rse_SRP049168.Rdata
+2017-03-06 16:10:52 loading file ./rse_SRP049203.Rdata
+2017-03-06 16:10:53 merging RSE objects (group)
+2017-03-06 16:10:55 loading file ./rse_SRP049237.Rdata
+2017-03-06 16:10:57 loading file ./rse_SRP049238.Rdata
+2017-03-06 16:10:59 loading file ./rse_SRP049264.Rdata
+2017-03-06 16:11:01 loading file ./rse_SRP049333.Rdata
+2017-03-06 16:11:02 loading file ./rse_SRP049340.Rdata
+2017-03-06 16:11:05 loading file ./rse_SRP049355.Rdata
+2017-03-06 16:11:07 loading file ./rse_SRP049377.Rdata
+2017-03-06 16:11:09 loading file ./rse_SRP049391.Rdata
+2017-03-06 16:11:11 loading file ./rse_SRP049409.Rdata
+2017-03-06 16:11:13 loading file ./rse_SRP049410.Rdata
+2017-03-06 16:11:15 loading file ./rse_SRP049426.Rdata
+2017-03-06 16:11:16 loading file ./rse_SRP049436.Rdata
+2017-03-06 16:11:18 loading file ./rse_SRP049449.Rdata
+2017-03-06 16:11:20 loading file ./rse_SRP049450.Rdata
+2017-03-06 16:11:22 loading file ./rse_SRP049453.Rdata
+2017-03-06 16:11:24 loading file ./rse_SRP049462.Rdata
+2017-03-06 16:11:26 loading file ./rse_SRP049465.Rdata
+2017-03-06 16:11:28 loading file ./rse_SRP049475.Rdata
+2017-03-06 16:11:30 loading file ./rse_SRP049479.Rdata
+2017-03-06 16:11:32 loading file ./rse_SRP049484.Rdata
+2017-03-06 16:11:34 merging RSE objects (group)
+2017-03-06 16:11:36 loading file ./rse_SRP049500.Rdata
+2017-03-06 16:11:38 loading file ./rse_SRP049507.Rdata
+2017-03-06 16:11:40 loading file ./rse_SRP049510.Rdata
+2017-03-06 16:11:42 loading file ./rse_SRP049514.Rdata
+2017-03-06 16:11:44 loading file ./rse_SRP049515.Rdata
+2017-03-06 16:11:46 loading file ./rse_SRP049553.Rdata
+2017-03-06 16:11:48 loading file ./rse_SRP049591.Rdata
+2017-03-06 16:11:50 loading file ./rse_SRP049593.Rdata
+2017-03-06 16:11:54 loading file ./rse_SRP049599.Rdata
+2017-03-06 16:11:57 loading file ./rse_SRP049611.Rdata
+2017-03-06 16:11:59 loading file ./rse_SRP049648.Rdata
+2017-03-06 16:12:00 loading file ./rse_SRP049695.Rdata
+2017-03-06 16:12:02 loading file ./rse_SRP049705.Rdata
+2017-03-06 16:12:04 loading file ./rse_SRP049713.Rdata
+2017-03-06 16:12:06 loading file ./rse_SRP049714.Rdata
+2017-03-06 16:12:08 loading file ./rse_SRP049756.Rdata
+2017-03-06 16:12:10 loading file ./rse_SRP049769.Rdata
+2017-03-06 16:12:12 loading file ./rse_SRP049775.Rdata
+2017-03-06 16:12:14 loading file ./rse_SRP049776.Rdata
+2017-03-06 16:12:16 loading file ./rse_SRP049805.Rdata
+2017-03-06 16:12:18 loading file ./rse_SRP049820.Rdata
+2017-03-06 16:12:20 merging RSE objects (group)
+2017-03-06 16:12:23 loading file ./rse_SRP049823.Rdata
+2017-03-06 16:12:25 loading file ./rse_SRP049946.Rdata
+2017-03-06 16:12:27 loading file ./rse_SRP049967.Rdata
+2017-03-06 16:12:29 loading file ./rse_SRP049981.Rdata
+2017-03-06 16:12:31 loading file ./rse_SRP049988.Rdata
+2017-03-06 16:12:33 loading file ./rse_SRP050000.Rdata
+2017-03-06 16:12:35 loading file ./rse_SRP050003.Rdata
+2017-03-06 16:12:37 loading file ./rse_SRP050036.Rdata
+2017-03-06 16:12:39 loading file ./rse_SRP050055.Rdata
+2017-03-06 16:12:41 loading file ./rse_SRP050058.Rdata
+2017-03-06 16:12:43 loading file ./rse_SRP050061.Rdata
+2017-03-06 16:12:45 loading file ./rse_SRP050074.Rdata
+2017-03-06 16:12:46 loading file ./rse_SRP050087.Rdata
+2017-03-06 16:12:48 loading file ./rse_SRP050089.Rdata
+2017-03-06 16:12:50 loading file ./rse_SRP050138.Rdata
+2017-03-06 16:12:52 loading file ./rse_SRP050146.Rdata
+2017-03-06 16:12:54 loading file ./rse_SRP050147.Rdata
+2017-03-06 16:12:56 loading file ./rse_SRP050149.Rdata
+2017-03-06 16:12:58 loading file ./rse_SRP050179.Rdata
+2017-03-06 16:13:00 loading file ./rse_SRP050191.Rdata
+2017-03-06 16:13:02 merging RSE objects (group)
+2017-03-06 16:13:07 loading file ./rse_SRP050193.Rdata
+2017-03-06 16:13:09 loading file ./rse_SRP050215.Rdata
+2017-03-06 16:13:11 loading file ./rse_SRP050223.Rdata
+2017-03-06 16:13:15 loading file ./rse_SRP050242.Rdata
+2017-03-06 16:13:17 loading file ./rse_SRP050245.Rdata
+2017-03-06 16:13:19 loading file ./rse_SRP050246.Rdata
+2017-03-06 16:13:21 loading file ./rse_SRP050249.Rdata
+2017-03-06 16:13:23 loading file ./rse_SRP050260.Rdata
+2017-03-06 16:13:25 loading file ./rse_SRP050272.Rdata
+2017-03-06 16:13:27 loading file ./rse_SRP050331.Rdata
+2017-03-06 16:13:30 loading file ./rse_SRP050333.Rdata
+2017-03-06 16:13:32 loading file ./rse_SRP050335.Rdata
+2017-03-06 16:13:33 loading file ./rse_SRP050365.Rdata
+2017-03-06 16:13:35 loading file ./rse_SRP050374.Rdata
+2017-03-06 16:13:37 loading file ./rse_SRP050397.Rdata
+2017-03-06 16:13:39 loading file ./rse_SRP050440.Rdata
+2017-03-06 16:13:42 loading file ./rse_SRP050468.Rdata
+2017-03-06 16:13:44 loading file ./rse_SRP050490.Rdata
+2017-03-06 16:13:45 loading file ./rse_SRP050493.Rdata
+2017-03-06 16:13:47 loading file ./rse_SRP050497.Rdata
+2017-03-06 16:13:49 merging RSE objects (group)
+2017-03-06 16:13:52 loading file ./rse_SRP050499.Rdata
+2017-03-06 16:13:56 loading file ./rse_SRP050533.Rdata
+2017-03-06 16:13:58 loading file ./rse_SRP050534.Rdata
+2017-03-06 16:13:59 loading file ./rse_SRP050551.Rdata
+2017-03-06 16:14:01 loading file ./rse_SRP050563.Rdata
+2017-03-06 16:14:03 loading file ./rse_SRP050576.Rdata
+2017-03-06 16:14:05 loading file ./rse_SRP050596.Rdata
+2017-03-06 16:14:07 loading file ./rse_SRP050892.Rdata
+2017-03-06 16:14:11 loading file ./rse_SRP050943.Rdata
+2017-03-06 16:14:13 loading file ./rse_SRP050954.Rdata
+2017-03-06 16:14:15 loading file ./rse_SRP050971.Rdata
+2017-03-06 16:14:17 loading file ./rse_SRP050992.Rdata
+2017-03-06 16:14:22 loading file ./rse_SRP051000.Rdata
+2017-03-06 16:14:24 loading file ./rse_SRP051039.Rdata
+2017-03-06 16:14:26 loading file ./rse_SRP051083.Rdata
+2017-03-06 16:14:28 loading file ./rse_SRP051102.Rdata
+2017-03-06 16:14:31 loading file ./rse_SRP051118.Rdata
+2017-03-06 16:14:33 loading file ./rse_SRP051138.Rdata
+2017-03-06 16:14:34 loading file ./rse_SRP051170.Rdata
+2017-03-06 16:14:37 loading file ./rse_SRP051182.Rdata
+2017-03-06 16:14:39 merging RSE objects (group)
+2017-03-06 16:14:43 loading file ./rse_SRP051211.Rdata
+2017-03-06 16:14:45 loading file ./rse_SRP051249.Rdata
+2017-03-06 16:14:48 loading file ./rse_SRP051309.Rdata
+2017-03-06 16:14:50 loading file ./rse_SRP051320.Rdata
+2017-03-06 16:14:52 loading file ./rse_SRP051331.Rdata
+2017-03-06 16:14:54 loading file ./rse_SRP051359.Rdata
+2017-03-06 16:14:56 loading file ./rse_SRP051368.Rdata
+2017-03-06 16:14:58 loading file ./rse_SRP051369.Rdata
+2017-03-06 16:15:00 loading file ./rse_SRP051401.Rdata
+2017-03-06 16:15:03 loading file ./rse_SRP051468.Rdata
+2017-03-06 16:15:05 loading file ./rse_SRP051472.Rdata
+2017-03-06 16:15:07 loading file ./rse_SRP051485.Rdata
+2017-03-06 16:15:10 loading file ./rse_SRP051544.Rdata
+2017-03-06 16:15:11 loading file ./rse_SRP051583.Rdata
+2017-03-06 16:15:13 loading file ./rse_SRP051595.Rdata
+2017-03-06 16:15:15 loading file ./rse_SRP051599.Rdata
+2017-03-06 16:15:18 loading file ./rse_SRP051606.Rdata
+2017-03-06 16:15:20 loading file ./rse_SRP051628.Rdata
+2017-03-06 16:15:22 loading file ./rse_SRP051644.Rdata
+2017-03-06 16:15:24 loading file ./rse_SRP051674.Rdata
+2017-03-06 16:15:25 merging RSE objects (group)
+2017-03-06 16:15:28 loading file ./rse_SRP051675.Rdata
+2017-03-06 16:15:29 loading file ./rse_SRP051688.Rdata
+2017-03-06 16:15:32 loading file ./rse_SRP051705.Rdata
+2017-03-06 16:15:33 loading file ./rse_SRP051736.Rdata
+2017-03-06 16:15:35 loading file ./rse_SRP051737.Rdata
+2017-03-06 16:15:37 loading file ./rse_SRP051765.Rdata
+2017-03-06 16:15:39 loading file ./rse_SRP051772.Rdata
+2017-03-06 16:15:41 loading file ./rse_SRP051819.Rdata
+2017-03-06 16:15:43 loading file ./rse_SRP051822.Rdata
+2017-03-06 16:15:45 loading file ./rse_SRP051825.Rdata
+2017-03-06 16:15:47 loading file ./rse_SRP051844.Rdata
+2017-03-06 16:15:49 loading file ./rse_SRP051848.Rdata
+2017-03-06 16:15:53 loading file ./rse_SRP051853.Rdata
+2017-03-06 16:15:54 loading file ./rse_SRP052056.Rdata
+2017-03-06 16:15:56 loading file ./rse_SRP052057.Rdata
+2017-03-06 16:15:58 loading file ./rse_SRP052201.Rdata
+2017-03-06 16:16:00 loading file ./rse_SRP052229.Rdata
+2017-03-06 16:16:02 loading file ./rse_SRP052294.Rdata
+2017-03-06 16:16:04 loading file ./rse_SRP052491.Rdata
+2017-03-06 16:16:06 loading file ./rse_SRP052612.Rdata
+2017-03-06 16:16:08 merging RSE objects (group)
+2017-03-06 16:16:11 loading file ./rse_SRP052615.Rdata
+2017-03-06 16:16:13 loading file ./rse_SRP052620.Rdata
+2017-03-06 16:16:15 loading file ./rse_SRP052706.Rdata
+2017-03-06 16:16:17 loading file ./rse_SRP052713.Rdata
+2017-03-06 16:16:19 loading file ./rse_SRP052732.Rdata
+2017-03-06 16:16:20 loading file ./rse_SRP052740.Rdata
+2017-03-06 16:16:24 loading file ./rse_SRP052760.Rdata
+2017-03-06 16:16:26 loading file ./rse_SRP052763.Rdata
+2017-03-06 16:16:27 loading file ./rse_SRP052781.Rdata
+2017-03-06 16:16:29 loading file ./rse_SRP052817.Rdata
+2017-03-06 16:16:31 loading file ./rse_SRP052856.Rdata
+2017-03-06 16:16:33 loading file ./rse_SRP052874.Rdata
+2017-03-06 16:16:35 loading file ./rse_SRP052879.Rdata
+2017-03-06 16:16:37 loading file ./rse_SRP052896.Rdata
+2017-03-06 16:16:40 loading file ./rse_SRP052950.Rdata
+2017-03-06 16:16:42 loading file ./rse_SRP052978.Rdata
+2017-03-06 16:16:44 loading file ./rse_SRP052983.Rdata
+2017-03-06 16:16:46 loading file ./rse_SRP052991.Rdata
+2017-03-06 16:16:47 loading file ./rse_SRP052998.Rdata
+2017-03-06 16:16:49 loading file ./rse_SRP053004.Rdata
+2017-03-06 16:16:51 merging RSE objects (group)
+2017-03-06 16:16:55 loading file ./rse_SRP053034.Rdata
+2017-03-06 16:16:57 loading file ./rse_SRP053042.Rdata
+2017-03-06 16:16:59 loading file ./rse_SRP053043.Rdata
+2017-03-06 16:17:01 loading file ./rse_SRP053046.Rdata
+2017-03-06 16:17:03 loading file ./rse_SRP053052.Rdata
+2017-03-06 16:17:05 loading file ./rse_SRP053098.Rdata
+2017-03-06 16:17:07 loading file ./rse_SRP053101.Rdata
+2017-03-06 16:17:09 loading file ./rse_SRP053124.Rdata
+2017-03-06 16:17:11 loading file ./rse_SRP053186.Rdata
+2017-03-06 16:17:13 loading file ./rse_SRP053190.Rdata
+2017-03-06 16:17:15 loading file ./rse_SRP053195.Rdata
+2017-03-06 16:17:17 loading file ./rse_SRP053246.Rdata
+2017-03-06 16:17:20 loading file ./rse_SRP053296.Rdata
+2017-03-06 16:17:22 loading file ./rse_SRP053366.Rdata
+2017-03-06 16:17:24 loading file ./rse_SRP053402.Rdata
+2017-03-06 16:17:26 loading file ./rse_SRP053794.Rdata
+2017-03-06 16:17:28 loading file ./rse_SRP054971.Rdata
+2017-03-06 16:17:30 loading file ./rse_SRP055005.Rdata
+2017-03-06 16:17:32 loading file ./rse_SRP055009.Rdata
+2017-03-06 16:17:34 loading file ./rse_SRP055027.Rdata
+2017-03-06 16:17:36 loading file ./rse_SRP055048.Rdata
+2017-03-06 16:17:38 merging RSE objects (group)
+2017-03-06 16:17:40 loading file ./rse_SRP055101.Rdata
+2017-03-06 16:17:42 loading file ./rse_SRP055103.Rdata
+2017-03-06 16:17:44 loading file ./rse_SRP055105.Rdata
+2017-03-06 16:17:47 loading file ./rse_SRP055108.Rdata
+2017-03-06 16:17:48 loading file ./rse_SRP055153.Rdata
+2017-03-06 16:17:51 loading file ./rse_SRP055180.Rdata
+2017-03-06 16:17:53 loading file ./rse_SRP055390.Rdata
+2017-03-06 16:17:55 loading file ./rse_SRP055392.Rdata
+2017-03-06 16:17:57 loading file ./rse_SRP055411.Rdata
+2017-03-06 16:17:59 loading file ./rse_SRP055438.Rdata
+2017-03-06 16:18:01 loading file ./rse_SRP055440.Rdata
+2017-03-06 16:18:03 loading file ./rse_SRP055444.Rdata
+2017-03-06 16:18:05 loading file ./rse_SRP055447.Rdata
+2017-03-06 16:18:07 loading file ./rse_SRP055454.Rdata
+2017-03-06 16:18:09 loading file ./rse_SRP055474.Rdata
+2017-03-06 16:18:11 loading file ./rse_SRP055475.Rdata
+2017-03-06 16:18:13 loading file ./rse_SRP055512.Rdata
+2017-03-06 16:18:15 loading file ./rse_SRP055513.Rdata
+2017-03-06 16:18:18 loading file ./rse_SRP055514.Rdata
+2017-03-06 16:18:20 loading file ./rse_SRP055569.Rdata
+2017-03-06 16:18:26 merging RSE objects (group)
+2017-03-06 16:18:30 loading file ./rse_SRP055675.Rdata
+2017-03-06 16:18:31 loading file ./rse_SRP055730.Rdata
+2017-03-06 16:18:33 loading file ./rse_SRP055749.Rdata
+2017-03-06 16:18:35 loading file ./rse_SRP055770.Rdata
+2017-03-06 16:18:37 loading file ./rse_SRP055809.Rdata
+2017-03-06 16:18:38 loading file ./rse_SRP055810.Rdata
+2017-03-06 16:18:40 loading file ./rse_SRP055858.Rdata
+2017-03-06 16:18:42 loading file ./rse_SRP055860.Rdata
+2017-03-06 16:18:44 loading file ./rse_SRP055863.Rdata
+2017-03-06 16:18:45 loading file ./rse_SRP055874.Rdata
+2017-03-06 16:18:47 loading file ./rse_SRP055916.Rdata
+2017-03-06 16:18:49 loading file ./rse_SRP055917.Rdata
+2017-03-06 16:18:51 loading file ./rse_SRP055918.Rdata
+2017-03-06 16:18:53 loading file ./rse_SRP055938.Rdata
+2017-03-06 16:18:55 loading file ./rse_SRP055981.Rdata
+2017-03-06 16:18:57 loading file ./rse_SRP056000.Rdata
+2017-03-06 16:18:58 loading file ./rse_SRP056032.Rdata
+2017-03-06 16:19:00 loading file ./rse_SRP056033.Rdata
+2017-03-06 16:19:02 loading file ./rse_SRP056036.Rdata
+2017-03-06 16:19:03 loading file ./rse_SRP056041.Rdata
+2017-03-06 16:19:05 merging RSE objects (group)
+2017-03-06 16:19:07 loading file ./rse_SRP056049.Rdata
+2017-03-06 16:19:08 loading file ./rse_SRP056066.Rdata
+2017-03-06 16:19:10 loading file ./rse_SRP056074.Rdata
+2017-03-06 16:19:12 loading file ./rse_SRP056076.Rdata
+2017-03-06 16:19:14 loading file ./rse_SRP056084.Rdata
+2017-03-06 16:19:15 loading file ./rse_SRP056086.Rdata
+2017-03-06 16:19:17 loading file ./rse_SRP056098.Rdata
+2017-03-06 16:19:19 loading file ./rse_SRP056146.Rdata
+2017-03-06 16:19:20 loading file ./rse_SRP056153.Rdata
+2017-03-06 16:19:22 loading file ./rse_SRP056159.Rdata
+2017-03-06 16:19:24 loading file ./rse_SRP056197.Rdata
+2017-03-06 16:19:26 loading file ./rse_SRP056200.Rdata
+2017-03-06 16:19:28 loading file ./rse_SRP056201.Rdata
+2017-03-06 16:19:29 loading file ./rse_SRP056220.Rdata
+2017-03-06 16:19:31 loading file ./rse_SRP056287.Rdata
+2017-03-06 16:19:33 loading file ./rse_SRP056293.Rdata
+2017-03-06 16:19:35 loading file ./rse_SRP056295.Rdata
+2017-03-06 16:19:40 loading file ./rse_SRP056296.Rdata
+2017-03-06 16:19:42 loading file ./rse_SRP056330.Rdata
+2017-03-06 16:19:44 loading file ./rse_SRP056369.Rdata
+2017-03-06 16:19:45 merging RSE objects (group)
+2017-03-06 16:19:48 loading file ./rse_SRP056378.Rdata
+2017-03-06 16:19:50 loading file ./rse_SRP056395.Rdata
+2017-03-06 16:19:52 loading file ./rse_SRP056433.Rdata
+2017-03-06 16:19:53 loading file ./rse_SRP056437.Rdata
+2017-03-06 16:19:55 loading file ./rse_SRP056438.Rdata
+2017-03-06 16:19:57 loading file ./rse_SRP056443.Rdata
+2017-03-06 16:19:58 loading file ./rse_SRP056477.Rdata
+2017-03-06 16:20:00 loading file ./rse_SRP056498.Rdata
+2017-03-06 16:20:02 loading file ./rse_SRP056530.Rdata
+2017-03-06 16:20:04 loading file ./rse_SRP056604.Rdata
+2017-03-06 16:20:05 loading file ./rse_SRP056612.Rdata
+2017-03-06 16:20:07 loading file ./rse_SRP056637.Rdata
+2017-03-06 16:20:09 loading file ./rse_SRP056665.Rdata
+2017-03-06 16:20:10 loading file ./rse_SRP056696.Rdata
+2017-03-06 16:20:12 loading file ./rse_SRP056733.Rdata
+2017-03-06 16:20:15 loading file ./rse_SRP056742.Rdata
+2017-03-06 16:20:17 loading file ./rse_SRP056784.Rdata
+2017-03-06 16:20:18 loading file ./rse_SRP056792.Rdata
+2017-03-06 16:20:20 loading file ./rse_SRP056802.Rdata
+2017-03-06 16:20:22 loading file ./rse_SRP056835.Rdata
+2017-03-06 16:20:23 merging RSE objects (group)
+2017-03-06 16:20:25 loading file ./rse_SRP056840.Rdata
+2017-03-06 16:20:28 loading file ./rse_SRP056863.Rdata
+2017-03-06 16:20:30 loading file ./rse_SRP056912.Rdata
+2017-03-06 16:20:31 loading file ./rse_SRP056957.Rdata
+2017-03-06 16:20:33 loading file ./rse_SRP056969.Rdata
+2017-03-06 16:20:35 loading file ./rse_SRP056989.Rdata
+2017-03-06 16:20:36 loading file ./rse_SRP057017.Rdata
+2017-03-06 16:20:38 loading file ./rse_SRP057064.Rdata
+2017-03-06 16:20:40 loading file ./rse_SRP057065.Rdata
+2017-03-06 16:20:41 loading file ./rse_SRP057066.Rdata
+2017-03-06 16:20:43 loading file ./rse_SRP057074.Rdata
+2017-03-06 16:20:45 loading file ./rse_SRP057087.Rdata
+2017-03-06 16:20:47 loading file ./rse_SRP057098.Rdata
+2017-03-06 16:20:48 loading file ./rse_SRP057118.Rdata
+2017-03-06 16:20:50 loading file ./rse_SRP057147.Rdata
+2017-03-06 16:20:51 loading file ./rse_SRP057156.Rdata
+2017-03-06 16:20:53 loading file ./rse_SRP057196.Rdata
+2017-03-06 16:20:57 loading file ./rse_SRP057205.Rdata
+2017-03-06 16:20:59 loading file ./rse_SRP057213.Rdata
+2017-03-06 16:21:01 loading file ./rse_SRP057244.Rdata
+2017-03-06 16:21:03 merging RSE objects (group)
+2017-03-06 16:21:05 loading file ./rse_SRP057248.Rdata
+2017-03-06 16:21:07 loading file ./rse_SRP057249.Rdata
+2017-03-06 16:21:09 loading file ./rse_SRP057250.Rdata
+2017-03-06 16:21:10 loading file ./rse_SRP057251.Rdata
+2017-03-06 16:21:12 loading file ./rse_SRP057253.Rdata
+2017-03-06 16:21:14 loading file ./rse_SRP057280.Rdata
+2017-03-06 16:21:15 loading file ./rse_SRP057322.Rdata
+2017-03-06 16:21:17 loading file ./rse_SRP057437.Rdata
+2017-03-06 16:21:19 loading file ./rse_SRP057446.Rdata
+2017-03-06 16:21:20 loading file ./rse_SRP057448.Rdata
+2017-03-06 16:21:22 loading file ./rse_SRP057500.Rdata
+2017-03-06 16:21:25 loading file ./rse_SRP057508.Rdata
+2017-03-06 16:21:27 loading file ./rse_SRP057512.Rdata
+2017-03-06 16:21:29 loading file ./rse_SRP057545.Rdata
+2017-03-06 16:21:31 loading file ./rse_SRP057586.Rdata
+2017-03-06 16:21:32 loading file ./rse_SRP057613.Rdata
+2017-03-06 16:21:34 loading file ./rse_SRP057616.Rdata
+2017-03-06 16:21:36 loading file ./rse_SRP057627.Rdata
+2017-03-06 16:21:37 loading file ./rse_SRP057629.Rdata
+2017-03-06 16:21:39 loading file ./rse_SRP057660.Rdata
+2017-03-06 16:21:41 merging RSE objects (group)
+2017-03-06 16:21:46 loading file ./rse_SRP057721.Rdata
+2017-03-06 16:21:48 loading file ./rse_SRP057745.Rdata
+2017-03-06 16:21:50 loading file ./rse_SRP057758.Rdata
+2017-03-06 16:21:52 loading file ./rse_SRP057766.Rdata
+2017-03-06 16:21:54 loading file ./rse_SRP057804.Rdata
+2017-03-06 16:21:56 loading file ./rse_SRP057814.Rdata
+2017-03-06 16:21:57 loading file ./rse_SRP057819.Rdata
+2017-03-06 16:21:59 loading file ./rse_SRP057826.Rdata
+2017-03-06 16:22:01 loading file ./rse_SRP057852.Rdata
+2017-03-06 16:22:02 loading file ./rse_SRP057855.Rdata
+2017-03-06 16:22:04 loading file ./rse_SRP057878.Rdata
+2017-03-06 16:22:06 loading file ./rse_SRP057964.Rdata
+2017-03-06 16:22:07 loading file ./rse_SRP058026.Rdata
+2017-03-06 16:22:09 loading file ./rse_SRP058036.Rdata
+2017-03-06 16:22:11 loading file ./rse_SRP058046.Rdata
+2017-03-06 16:22:12 loading file ./rse_SRP058087.Rdata
+2017-03-06 16:22:14 loading file ./rse_SRP058098.Rdata
+2017-03-06 16:22:16 loading file ./rse_SRP058107.Rdata
+2017-03-06 16:22:17 loading file ./rse_SRP058120.Rdata
+2017-03-06 16:22:19 loading file ./rse_SRP058181.Rdata
+2017-03-06 16:22:21 loading file ./rse_SRP058191.Rdata
+2017-03-06 16:22:23 merging RSE objects (group)
+2017-03-06 16:22:25 loading file ./rse_SRP058222.Rdata
+2017-03-06 16:22:27 loading file ./rse_SRP058237.Rdata
+2017-03-06 16:22:28 loading file ./rse_SRP058244.Rdata
+2017-03-06 16:22:30 loading file ./rse_SRP058260.Rdata
+2017-03-06 16:22:32 loading file ./rse_SRP058300.Rdata
+2017-03-06 16:22:33 loading file ./rse_SRP058319.Rdata
+2017-03-06 16:22:35 loading file ./rse_SRP058351.Rdata
+2017-03-06 16:22:37 loading file ./rse_SRP058375.Rdata
+2017-03-06 16:22:38 loading file ./rse_SRP058383.Rdata
+2017-03-06 16:22:40 loading file ./rse_SRP058387.Rdata
+2017-03-06 16:22:41 loading file ./rse_SRP058414.Rdata
+2017-03-06 16:22:43 loading file ./rse_SRP058435.Rdata
+2017-03-06 16:22:45 loading file ./rse_SRP058476.Rdata
+2017-03-06 16:22:46 loading file ./rse_SRP058479.Rdata
+2017-03-06 16:22:48 loading file ./rse_SRP058567.Rdata
+2017-03-06 16:22:49 loading file ./rse_SRP058571.Rdata
+2017-03-06 16:22:51 loading file ./rse_SRP058626.Rdata
+2017-03-06 16:22:53 loading file ./rse_SRP058633.Rdata
+2017-03-06 16:22:54 loading file ./rse_SRP058640.Rdata
+2017-03-06 16:22:56 loading file ./rse_SRP058647.Rdata
+2017-03-06 16:22:58 merging RSE objects (group)
+2017-03-06 16:23:00 loading file ./rse_SRP058654.Rdata
+2017-03-06 16:23:01 loading file ./rse_SRP058664.Rdata
+2017-03-06 16:23:03 loading file ./rse_SRP058667.Rdata
+2017-03-06 16:23:04 loading file ./rse_SRP058714.Rdata
+2017-03-06 16:23:06 loading file ./rse_SRP058719.Rdata
+2017-03-06 16:23:08 loading file ./rse_SRP058722.Rdata
+2017-03-06 16:23:10 loading file ./rse_SRP058740.Rdata
+2017-03-06 16:23:11 loading file ./rse_SRP058771.Rdata
+2017-03-06 16:23:13 loading file ./rse_SRP058773.Rdata
+2017-03-06 16:23:15 loading file ./rse_SRP058783.Rdata
+2017-03-06 16:23:17 loading file ./rse_SRP058804.Rdata
+2017-03-06 16:23:18 loading file ./rse_SRP058822.Rdata
+2017-03-06 16:23:20 loading file ./rse_SRP058840.Rdata
+2017-03-06 16:23:22 loading file ./rse_SRP058841.Rdata
+2017-03-06 16:23:24 loading file ./rse_SRP058856.Rdata
+2017-03-06 16:23:26 loading file ./rse_SRP058948.Rdata
+2017-03-06 16:23:27 loading file ./rse_SRP058977.Rdata
+2017-03-06 16:23:29 loading file ./rse_SRP059035.Rdata
+2017-03-06 16:23:32 loading file ./rse_SRP059039.Rdata
+2017-03-06 16:23:35 loading file ./rse_SRP059057.Rdata
+2017-03-06 16:23:37 merging RSE objects (group)
+2017-03-06 16:23:39 loading file ./rse_SRP059066.Rdata
+2017-03-06 16:23:41 loading file ./rse_SRP059170.Rdata
+2017-03-06 16:23:43 loading file ./rse_SRP059172.Rdata
+2017-03-06 16:23:46 loading file ./rse_SRP059197.Rdata
+2017-03-06 16:23:47 loading file ./rse_SRP059205.Rdata
+2017-03-06 16:23:49 loading file ./rse_SRP059242.Rdata
+2017-03-06 16:23:51 loading file ./rse_SRP059244.Rdata
+2017-03-06 16:23:53 loading file ./rse_SRP059266.Rdata
+2017-03-06 16:23:54 loading file ./rse_SRP059275.Rdata
+2017-03-06 16:23:56 loading file ./rse_SRP059279.Rdata
+2017-03-06 16:23:58 loading file ./rse_SRP059357.Rdata
+2017-03-06 16:23:59 loading file ./rse_SRP059379.Rdata
+2017-03-06 16:24:01 loading file ./rse_SRP059431.Rdata
+2017-03-06 16:24:03 loading file ./rse_SRP059458.Rdata
+2017-03-06 16:24:05 loading file ./rse_SRP059509.Rdata
+2017-03-06 16:24:07 loading file ./rse_SRP059531.Rdata
+2017-03-06 16:24:09 loading file ./rse_SRP059579.Rdata
+2017-03-06 16:24:10 loading file ./rse_SRP059643.Rdata
+2017-03-06 16:24:12 loading file ./rse_SRP059692.Rdata
+2017-03-06 16:24:14 loading file ./rse_SRP059695.Rdata
+2017-03-06 16:24:16 merging RSE objects (group)
+2017-03-06 16:24:18 loading file ./rse_SRP059701.Rdata
+2017-03-06 16:24:19 loading file ./rse_SRP059732.Rdata
+2017-03-06 16:24:21 loading file ./rse_SRP059733.Rdata
+2017-03-06 16:24:23 loading file ./rse_SRP059735.Rdata
+2017-03-06 16:24:24 loading file ./rse_SRP059775.Rdata
+2017-03-06 16:24:27 loading file ./rse_SRP059925.Rdata
+2017-03-06 16:24:29 loading file ./rse_SRP059948.Rdata
+2017-03-06 16:24:30 loading file ./rse_SRP059950.Rdata
+2017-03-06 16:24:32 loading file ./rse_SRP059957.Rdata
+2017-03-06 16:24:34 loading file ./rse_SRP059959.Rdata
+2017-03-06 16:24:36 loading file ./rse_SRP059989.Rdata
+2017-03-06 16:24:37 loading file ./rse_SRP060227.Rdata
+2017-03-06 16:24:39 loading file ./rse_SRP060253.Rdata
+2017-03-06 16:24:41 loading file ./rse_SRP060284.Rdata
+2017-03-06 16:24:42 loading file ./rse_SRP060348.Rdata
+2017-03-06 16:24:44 loading file ./rse_SRP060355.Rdata
+2017-03-06 16:24:46 loading file ./rse_SRP060359.Rdata
+2017-03-06 16:24:48 loading file ./rse_SRP060370.Rdata
+2017-03-06 16:24:50 loading file ./rse_SRP060416.Rdata
+2017-03-06 16:24:55 loading file ./rse_SRP060598.Rdata
+2017-03-06 16:24:56 merging RSE objects (group)
+2017-03-06 16:24:59 loading file ./rse_SRP060637.Rdata
+2017-03-06 16:25:01 loading file ./rse_SRP060650.Rdata
+2017-03-06 16:25:03 loading file ./rse_SRP060661.Rdata
+2017-03-06 16:25:04 loading file ./rse_SRP060708.Rdata
+2017-03-06 16:25:06 loading file ./rse_SRP060715.Rdata
+2017-03-06 16:25:07 loading file ./rse_SRP061033.Rdata
+2017-03-06 16:25:09 loading file ./rse_SRP061207.Rdata
+2017-03-06 16:25:11 loading file ./rse_SRP061240.Rdata
+2017-03-06 16:25:14 loading file ./rse_SRP061241.Rdata
+2017-03-06 16:25:16 loading file ./rse_SRP061243.Rdata
+2017-03-06 16:25:17 loading file ./rse_SRP061255.Rdata
+2017-03-06 16:25:19 loading file ./rse_SRP061292.Rdata
+2017-03-06 16:25:21 loading file ./rse_SRP061310.Rdata
+2017-03-06 16:25:22 loading file ./rse_SRP061329.Rdata
+2017-03-06 16:25:24 loading file ./rse_SRP061380.Rdata
+2017-03-06 16:25:25 loading file ./rse_SRP061397.Rdata
+2017-03-06 16:25:27 loading file ./rse_SRP061405.Rdata
+2017-03-06 16:25:29 loading file ./rse_SRP061416.Rdata
+2017-03-06 16:25:30 loading file ./rse_SRP061425.Rdata
+2017-03-06 16:25:32 loading file ./rse_SRP061426.Rdata
+2017-03-06 16:25:34 merging RSE objects (group)
+2017-03-06 16:25:36 loading file ./rse_SRP061455.Rdata
+2017-03-06 16:25:37 loading file ./rse_SRP061462.Rdata
+2017-03-06 16:25:39 loading file ./rse_SRP061522.Rdata
+2017-03-06 16:25:41 loading file ./rse_SRP061539.Rdata
+2017-03-06 16:25:42 loading file ./rse_SRP061566.Rdata
+2017-03-06 16:25:44 loading file ./rse_SRP061639.Rdata
+2017-03-06 16:25:46 loading file ./rse_SRP061670.Rdata
+2017-03-06 16:25:47 loading file ./rse_SRP061682.Rdata
+2017-03-06 16:25:49 loading file ./rse_SRP061685.Rdata
+2017-03-06 16:25:51 loading file ./rse_SRP061689.Rdata
+2017-03-06 16:25:53 loading file ./rse_SRP061701.Rdata
+2017-03-06 16:25:54 loading file ./rse_SRP061801.Rdata
+2017-03-06 16:25:56 loading file ./rse_SRP061840.Rdata
+2017-03-06 16:25:58 loading file ./rse_SRP061880.Rdata
+2017-03-06 16:26:00 loading file ./rse_SRP061881.Rdata
+2017-03-06 16:26:02 loading file ./rse_SRP061888.Rdata
+2017-03-06 16:26:03 loading file ./rse_SRP061932.Rdata
+2017-03-06 16:26:05 loading file ./rse_SRP061971.Rdata
+2017-03-06 16:26:07 loading file ./rse_SRP062010.Rdata
+2017-03-06 16:26:08 loading file ./rse_SRP062023.Rdata
+2017-03-06 16:26:10 merging RSE objects (group)
+2017-03-06 16:26:12 loading file ./rse_SRP062025.Rdata
+2017-03-06 16:26:14 loading file ./rse_SRP062177.Rdata
+2017-03-06 16:26:16 loading file ./rse_SRP062178.Rdata
+2017-03-06 16:26:18 loading file ./rse_SRP062188.Rdata
+2017-03-06 16:26:20 loading file ./rse_SRP062214.Rdata
+2017-03-06 16:26:21 loading file ./rse_SRP062230.Rdata
+2017-03-06 16:26:23 loading file ./rse_SRP062247.Rdata
+2017-03-06 16:26:24 loading file ./rse_SRP062284.Rdata
+2017-03-06 16:26:26 loading file ./rse_SRP062287.Rdata
+2017-03-06 16:26:28 loading file ./rse_SRP062332.Rdata
+2017-03-06 16:26:29 loading file ./rse_SRP062389.Rdata
+2017-03-06 16:26:31 loading file ./rse_SRP062444.Rdata
+2017-03-06 16:26:33 loading file ./rse_SRP062511.Rdata
+2017-03-06 16:26:34 loading file ./rse_SRP062544.Rdata
+2017-03-06 16:26:36 loading file ./rse_SRP062609.Rdata
+2017-03-06 16:26:38 loading file ./rse_SRP062617.Rdata
+2017-03-06 16:26:39 loading file ./rse_SRP062773.Rdata
+2017-03-06 16:26:41 loading file ./rse_SRP062873.Rdata
+2017-03-06 16:26:43 loading file ./rse_SRP062936.Rdata
+2017-03-06 16:26:44 loading file ./rse_SRP062950.Rdata
+2017-03-06 16:26:46 loading file ./rse_SRP062956.Rdata
+2017-03-06 16:26:48 merging RSE objects (group)
+2017-03-06 16:26:49 loading file ./rse_SRP062958.Rdata
+2017-03-06 16:26:51 loading file ./rse_SRP062966.Rdata
+2017-03-06 16:26:53 loading file ./rse_SRP063059.Rdata
+2017-03-06 16:26:55 loading file ./rse_SRP063070.Rdata
+2017-03-06 16:26:57 loading file ./rse_SRP063339.Rdata
+2017-03-06 16:26:59 loading file ./rse_SRP063363.Rdata
+2017-03-06 16:27:00 loading file ./rse_SRP063460.Rdata
+2017-03-06 16:27:02 loading file ./rse_SRP063462.Rdata
+2017-03-06 16:27:03 loading file ./rse_SRP063477.Rdata
+2017-03-06 16:27:05 loading file ./rse_SRP063493.Rdata
+2017-03-06 16:27:07 loading file ./rse_SRP063496.Rdata
+2017-03-06 16:27:09 loading file ./rse_SRP063500.Rdata
+2017-03-06 16:27:11 loading file ./rse_SRP063573.Rdata
+2017-03-06 16:27:13 loading file ./rse_SRP063581.Rdata
+2017-03-06 16:27:14 loading file ./rse_SRP063620.Rdata
+2017-03-06 16:27:16 loading file ./rse_SRP063631.Rdata
+2017-03-06 16:27:18 loading file ./rse_SRP063658.Rdata
+2017-03-06 16:27:19 loading file ./rse_SRP063661.Rdata
+2017-03-06 16:27:21 loading file ./rse_SRP063669.Rdata
+2017-03-06 16:27:23 loading file ./rse_SRP063754.Rdata
+2017-03-06 16:27:25 merging RSE objects (group)
+2017-03-06 16:27:27 loading file ./rse_SRP063834.Rdata
+2017-03-06 16:27:29 loading file ./rse_SRP063838.Rdata
+2017-03-06 16:27:31 loading file ./rse_SRP063840.Rdata
+2017-03-06 16:27:33 loading file ./rse_SRP063860.Rdata
+2017-03-06 16:27:35 loading file ./rse_SRP063867.Rdata
+2017-03-06 16:27:37 loading file ./rse_SRP063889.Rdata
+2017-03-06 16:27:39 loading file ./rse_SRP063948.Rdata
+2017-03-06 16:27:40 loading file ./rse_SRP063978.Rdata
+2017-03-06 16:27:42 loading file ./rse_SRP063980.Rdata
+2017-03-06 16:27:44 loading file ./rse_SRP064131.Rdata
+2017-03-06 16:27:46 loading file ./rse_SRP064138.Rdata
+2017-03-06 16:27:47 loading file ./rse_SRP064142.Rdata
+2017-03-06 16:27:49 loading file ./rse_SRP064143.Rdata
+2017-03-06 16:27:51 loading file ./rse_SRP064149.Rdata
+2017-03-06 16:27:53 loading file ./rse_SRP064259.Rdata
+2017-03-06 16:27:55 loading file ./rse_SRP064264.Rdata
+2017-03-06 16:27:57 loading file ./rse_SRP064270.Rdata
+2017-03-06 16:27:58 loading file ./rse_SRP064316.Rdata
+2017-03-06 16:28:00 loading file ./rse_SRP064317.Rdata
+2017-03-06 16:28:02 loading file ./rse_SRP064321.Rdata
+2017-03-06 16:28:03 merging RSE objects (group)
+2017-03-06 16:28:05 loading file ./rse_SRP064323.Rdata
+2017-03-06 16:28:07 loading file ./rse_SRP064378.Rdata
+2017-03-06 16:28:08 loading file ./rse_SRP064410.Rdata
+2017-03-06 16:28:10 loading file ./rse_SRP064454.Rdata
+2017-03-06 16:28:12 loading file ./rse_SRP064457.Rdata
+2017-03-06 16:28:14 loading file ./rse_SRP064458.Rdata
+2017-03-06 16:28:15 loading file ./rse_SRP064464.Rdata
+2017-03-06 16:28:17 loading file ./rse_SRP064475.Rdata
+2017-03-06 16:28:19 loading file ./rse_SRP064481.Rdata
+2017-03-06 16:28:21 loading file ./rse_SRP064538.Rdata
+2017-03-06 16:28:22 loading file ./rse_SRP064547.Rdata
+2017-03-06 16:28:24 loading file ./rse_SRP064561.Rdata
+2017-03-06 16:28:26 loading file ./rse_SRP064562.Rdata
+2017-03-06 16:28:27 loading file ./rse_SRP064624.Rdata
+2017-03-06 16:28:29 loading file ./rse_SRP064625.Rdata
+2017-03-06 16:28:31 loading file ./rse_SRP064652.Rdata
+2017-03-06 16:28:32 loading file ./rse_SRP064661.Rdata
+2017-03-06 16:28:34 loading file ./rse_SRP064671.Rdata
+2017-03-06 16:28:35 loading file ./rse_SRP064735.Rdata
+2017-03-06 16:28:37 loading file ./rse_SRP064781.Rdata
+2017-03-06 16:28:39 merging RSE objects (group)
+2017-03-06 16:28:41 loading file ./rse_SRP064783.Rdata
+2017-03-06 16:28:42 loading file ./rse_SRP064803.Rdata
+2017-03-06 16:28:44 loading file ./rse_SRP064820.Rdata
+2017-03-06 16:28:46 loading file ./rse_SRP064863.Rdata
+2017-03-06 16:28:47 loading file ./rse_SRP064894.Rdata
+2017-03-06 16:28:49 loading file ./rse_SRP064956.Rdata
+2017-03-06 16:28:51 loading file ./rse_SRP064967.Rdata
+2017-03-06 16:28:52 loading file ./rse_SRP065022.Rdata
+2017-03-06 16:28:54 loading file ./rse_SRP065114.Rdata
+2017-03-06 16:28:55 loading file ./rse_SRP065120.Rdata
+2017-03-06 16:28:57 loading file ./rse_SRP065127.Rdata
+2017-03-06 16:28:59 loading file ./rse_SRP065146.Rdata
+2017-03-06 16:29:00 loading file ./rse_SRP065153.Rdata
+2017-03-06 16:29:02 loading file ./rse_SRP065196.Rdata
+2017-03-06 16:29:03 loading file ./rse_SRP065202.Rdata
+2017-03-06 16:29:05 loading file ./rse_SRP065219.Rdata
+2017-03-06 16:29:07 loading file ./rse_SRP065258.Rdata
+2017-03-06 16:29:08 loading file ./rse_SRP065282.Rdata
+2017-03-06 16:29:10 loading file ./rse_SRP065330.Rdata
+2017-03-06 16:29:12 loading file ./rse_SRP065445.Rdata
+2017-03-06 16:29:13 merging RSE objects (group)
+2017-03-06 16:29:15 loading file ./rse_SRP065451.Rdata
+2017-03-06 16:29:16 loading file ./rse_SRP065468.Rdata
+2017-03-06 16:29:18 loading file ./rse_SRP065491.Rdata
+2017-03-06 16:29:20 loading file ./rse_SRP065500.Rdata
+2017-03-06 16:29:21 loading file ./rse_SRP065559.Rdata
+2017-03-06 16:29:23 loading file ./rse_SRP065763.Rdata
+2017-03-06 16:29:25 loading file ./rse_SRP065774.Rdata
+2017-03-06 16:29:26 loading file ./rse_SRP065812.Rdata
+2017-03-06 16:29:28 loading file ./rse_SRP065848.Rdata
+2017-03-06 16:29:30 loading file ./rse_SRP065849.Rdata
+2017-03-06 16:29:32 loading file ./rse_SRP065988.Rdata
+2017-03-06 16:29:33 loading file ./rse_SRP066008.Rdata
+2017-03-06 16:29:35 loading file ./rse_SRP066009.Rdata
+2017-03-06 16:29:37 loading file ./rse_SRP066150.Rdata
+2017-03-06 16:29:38 loading file ./rse_SRP066151.Rdata
+2017-03-06 16:29:40 loading file ./rse_SRP066152.Rdata
+2017-03-06 16:29:42 loading file ./rse_SRP066356.Rdata
+2017-03-06 16:29:44 loading file ./rse_SRP066363.Rdata
+2017-03-06 16:29:45 loading file ./rse_SRP066371.Rdata
+2017-03-06 16:29:47 loading file ./rse_SRP066394.Rdata
+2017-03-06 16:29:49 merging RSE objects (group)
+2017-03-06 16:29:50 loading file ./rse_SRP066424.Rdata
+2017-03-06 16:29:52 loading file ./rse_SRP066449.Rdata
+2017-03-06 16:29:53 loading file ./rse_SRP066482.Rdata
+2017-03-06 16:29:55 loading file ./rse_SRP066484.Rdata
+2017-03-06 16:29:56 loading file ./rse_SRP066488.Rdata
+2017-03-06 16:29:58 loading file ./rse_SRP066596.Rdata
+2017-03-06 16:30:00 loading file ./rse_SRP066729.Rdata
+2017-03-06 16:30:01 loading file ./rse_SRP066834.Rdata
+2017-03-06 16:30:07 loading file ./rse_SRP066889.Rdata
+2017-03-06 16:30:09 loading file ./rse_SRP066895.Rdata
+2017-03-06 16:30:10 loading file ./rse_SRP066912.Rdata
+2017-03-06 16:30:12 loading file ./rse_SRP066917.Rdata
+2017-03-06 16:30:14 loading file ./rse_SRP066934.Rdata
+2017-03-06 16:30:15 loading file ./rse_SRP066956.Rdata
+2017-03-06 16:30:18 loading file ./rse_SRP066959.Rdata
+2017-03-06 16:30:19 loading file ./rse_SRP066994.Rdata
+2017-03-06 16:30:21 loading file ./rse_SRP067173.Rdata
+2017-03-06 16:30:23 loading file ./rse_SRP067214.Rdata
+2017-03-06 16:30:24 loading file ./rse_SRP067221.Rdata
+2017-03-06 16:30:26 loading file ./rse_SRP067312.Rdata
+2017-03-06 16:30:28 merging RSE objects (group)
+2017-03-06 16:30:30 loading file ./rse_SRP067318.Rdata
+2017-03-06 16:30:32 loading file ./rse_SRP067469.Rdata
+2017-03-06 16:30:34 loading file ./rse_SRP067481.Rdata
+2017-03-06 16:30:35 loading file ./rse_SRP067502.Rdata
+2017-03-06 16:30:40 loading file ./rse_SRP067529.Rdata
+2017-03-06 16:30:42 loading file ./rse_SRP067645.Rdata
+2017-03-06 16:30:44 loading file ./rse_SRP067661.Rdata
+2017-03-06 16:30:46 loading file ./rse_SRP067701.Rdata
+2017-03-06 16:30:47 loading file ./rse_SRP067836.Rdata
+2017-03-06 16:30:49 loading file ./rse_SRP067928.Rdata
+2017-03-06 16:30:51 loading file ./rse_SRP067934.Rdata
+2017-03-06 16:30:52 loading file ./rse_SRP068078.Rdata
+2017-03-06 16:30:54 loading file ./rse_SRP068139.Rdata
+2017-03-06 16:30:56 loading file ./rse_SRP068194.Rdata
+2017-03-06 16:30:58 loading file ./rse_SRP068290.Rdata
+2017-03-06 16:30:59 loading file ./rse_SRP068318.Rdata
+2017-03-06 16:31:01 loading file ./rse_SRP068523.Rdata
+2017-03-06 16:31:03 loading file ./rse_SRP068824.Rdata
+2017-03-06 16:31:04 loading file ./rse_SRP068942.Rdata
+2017-03-06 16:31:06 loading file ./rse_SRP069016.Rdata
+2017-03-06 16:31:08 merging RSE objects (group)
+2017-03-06 16:31:10 saving rse_list
+2017-03-06 17:45:04 merging RSE objects by sets of groups
+2017-03-06 18:07:21 saving rse_list_sets
+2017-03-06 19:18:09 merging RSE objects from sets
+2017-03-06 19:18:09 extracting information from sets
+2017-03-06 19:58:39 preparing the counts matrix
+2017-03-06 19:58:39 initializing counts matrix
+2017-03-06 19:59:42 filling in counts matrix with set 1
+2017-03-06 19:59:44 filling in counts matrix with set 2
+2017-03-06 19:59:45 filling in counts matrix with set 3
+2017-03-06 19:59:46 filling in counts matrix with set 4
+2017-03-06 19:59:47 filling in counts matrix with set 5
+2017-03-06 19:59:47 filling in counts matrix with set 6
+2017-03-06 19:59:48 filling in counts matrix with set 7
+2017-03-06 19:59:48 filling in counts matrix with set 8
+2017-03-06 19:59:50 filling in counts matrix with set 9
+2017-03-06 19:59:51 filling in counts matrix with set 10
+2017-03-06 19:59:51 filling in counts matrix with set 11
+2017-03-06 19:59:52 filling in counts matrix with set 12
+2017-03-06 19:59:53 filling in counts matrix with set 13
+2017-03-06 19:59:54 filling in counts matrix with set 14
+2017-03-06 19:59:55 filling in counts matrix with set 15
+2017-03-06 19:59:56 filling in counts matrix with set 16
+2017-03-06 19:59:58 filling in counts matrix with set 17
+2017-03-06 19:59:59 filling in counts matrix with set 18
+2017-03-06 20:00:00 filling in counts matrix with set 19
+2017-03-06 20:00:01 filling in counts matrix with set 20
+2017-03-06 20:00:02 creating final rse object
+2017-03-06 20:00:02 saving the final rse_sra object
+[1] "rse.Rdata"
+Warning message:
+In rm(rle_list) : object 'rle_list' not found
+[1] "Reproducibility information:"
+[1] "2017-03-06 21:09:39 EST"
+    user   system  elapsed 
+16911.90  3819.09 20981.44 
+Session info -----------------------------------------------------------------------------------------------------------
+ setting  value                                      
+ version  R version 3.3.1 Patched (2016-09-30 r71426)
+ system   x86_64, linux-gnu                          
+ ui       X11                                        
+ language (EN)                                       
+ collate  en_US.UTF-8                                
+ tz       <NA>                                       
+ date     2017-03-06                                 
+
+Packages ---------------------------------------------------------------------------------------------------------------
+ package              * version  date       source        
+ acepack                1.4.1    2016-10-29 CRAN (R 3.3.1)
+ assertthat             0.1      2013-12-06 CRAN (R 3.3.0)
+ backports              1.0.5    2017-01-18 CRAN (R 3.3.1)
+ base64enc              0.1-3    2015-07-28 CRAN (R 3.3.0)
+ Biobase              * 2.34.0   2016-10-20 Bioconductor  
+ BiocGenerics         * 0.20.0   2016-11-17 Bioconductor  
+ bitops                 1.0-6    2013-08-17 CRAN (R 3.3.0)
+ checkmate              1.8.2    2016-11-02 CRAN (R 3.3.1)
+ cluster                2.0.4    2016-04-18 CRAN (R 3.3.1)
+ colorspace             1.3-2    2016-12-14 CRAN (R 3.3.1)
+ data.table             1.10.4   2017-02-01 CRAN (R 3.3.1)
+ devtools             * 1.12.0   2016-12-05 CRAN (R 3.3.1)
+ digest                 0.6.12   2017-01-27 CRAN (R 3.3.1)
+ foreign                0.8-67   2016-09-13 CRAN (R 3.3.1)
+ Formula              * 1.2-1    2015-04-07 CRAN (R 3.3.0)
+ GenomeInfoDb         * 1.10.3   2017-02-14 Bioconductor  
+ GenomicRanges        * 1.26.2   2017-01-17 Bioconductor  
+ ggplot2              * 2.2.1    2016-12-30 CRAN (R 3.3.1)
+ gridExtra              2.2.1    2016-02-29 CRAN (R 3.3.0)
+ gtable                 0.2.0    2016-02-26 CRAN (R 3.3.0)
+ Hmisc                * 4.0-2    2016-12-31 CRAN (R 3.3.1)
+ htmlTable              1.9      2017-01-26 CRAN (R 3.3.1)
+ htmltools              0.3.5    2016-03-21 CRAN (R 3.3.0)
+ htmlwidgets            0.8      2016-11-09 CRAN (R 3.3.1)
+ IRanges              * 2.8.1    2016-11-18 Bioconductor  
+ knitr                  1.15.1   2016-11-22 CRAN (R 3.3.1)
+ lattice              * 0.20-34  2016-09-06 CRAN (R 3.3.1)
+ latticeExtra           0.6-28   2016-02-09 CRAN (R 3.3.0)
+ lazyeval               0.2.0    2016-06-12 CRAN (R 3.3.1)
+ magrittr               1.5      2014-11-22 CRAN (R 3.3.1)
+ Matrix                 1.2-7.1  2016-09-01 CRAN (R 3.3.1)
+ memoise                1.0.0    2016-01-29 CRAN (R 3.3.0)
+ munsell                0.4.3    2016-02-13 CRAN (R 3.3.0)
+ nnet                   7.3-12   2016-02-02 CRAN (R 3.3.1)
+ plyr                   1.8.4    2016-06-08 CRAN (R 3.3.1)
+ RColorBrewer           1.1-2    2014-12-07 CRAN (R 3.3.0)
+ Rcpp                   0.12.9   2017-01-14 CRAN (R 3.3.1)
+ RCurl                  1.95-4.8 2016-03-01 CRAN (R 3.3.0)
+ rpart                  4.1-10   2015-06-29 CRAN (R 3.3.1)
+ S4Vectors            * 0.12.1   2016-12-05 Bioconductor  
+ scales                 0.4.1    2016-11-09 CRAN (R 3.3.1)
+ stringi                1.1.2    2016-10-01 CRAN (R 3.3.1)
+ stringr                1.1.0    2016-08-19 CRAN (R 3.3.1)
+ SummarizedExperiment * 1.4.0    2016-11-18 Bioconductor  
+ survival             * 2.40-1   2016-10-30 CRAN (R 3.3.1)
+ tibble                 1.2      2016-08-26 CRAN (R 3.3.1)
+ withr                  1.0.2    2016-06-20 CRAN (R 3.3.1)
+ XVector                0.14.0   2016-11-18 Bioconductor  
+ zlibbioc               1.20.0   2016-10-20 Bioconductor  
+**** Job ends ****
+Mon Mar  6 21:09:46 EST 2017
