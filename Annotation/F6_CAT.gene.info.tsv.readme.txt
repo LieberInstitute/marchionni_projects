@@ -1,0 +1,80 @@
+=================
+File descriptions
+=================
+Gene based information, including annotations and cross references of various IDs.
+
+
+===================
+Column descriptions
+===================
+
+column             description
+------             -----------
+geneID             [unique identifier] Identifier of the gene. Mainly inherited from GENCODE, plus the novel lncRNA knockdown targets with IDs defined by Chung's pipeline at RIKEN.
+geneName           [string] Name of the gene. Mainly inherited from the "gene name" field in GENCODE, plus the novel lncRNA knockdown targets with names defined by Chung's pipeline at RIKEN.
+geneType           [string] Biotypes of the gene. Mainly inherited from the "gene type" field in GENCODE, plus the novel lncRNA knockdown targets with tagged as novel gene
+CAT_geneClass      [string] If mapped to FANTOM CAT, then as gene class in FANTOM CAT; If not mapped, "__na"
+cntg               [string] Contig (i.e. chromosome)
+geneStart          [integer] Start (i.e. leftmost) position of the gene, 1-base
+geneEnd            [integer] End (rightmost) position of the gene
+strnd              [+ or -] Strand
+CAT_DHS_type       [string] If mapped to FANTOM CAT, then as type DNaseI hypersensitive site in FANTOM CAT, as promoters, enhancers or dyadic, based on ROADMAP DHS; If not mapped, "__na"
+gapmerID           [string] If lncRNA target, IDs of the gapmers for KD. If not, "__na"
+targetID           [string] If lncRNA target, ID of the target for KD. If not, "__na"
+numPrmtr           [integer] Number of promoters associated with the gene
+numTrnscpt         [integer] Number of transcrpts associated with the gene
+prmtrID            [string] IDs of promters associated with the gene
+trnscptID          [string] IDs of the transcrpts associated with the gene
+HGNC_ID            [string] ID in HGNC, based on matching GENCODE ID to HGNC. If not, "__na"
+HGNC_name          [string] approved name in HGNC. If not mapped, "__na"
+HGNC_symbol        [string] approved symbol in HGNC. If not mapped, "__na"
+HGNC_locus_group   [string] locus group annotated in HGNC. If not mapped, "__na"
+HGNC_locus_type    [string] locus type annotated in HGNC. If not mapped, "__na"
+HGNC_gene_family   [string] gene family annotated in HGNC. If not mapped, "__na"
+alias_name         [string] alias name annotated in HGNC. If not mapped, "__na"
+alias_symbol       [string] alias symbol annotated in HGNC. If not mapped, "__na"
+prev_name          [string] previous name annotated in HGNC. If not mapped, "__na"
+prev_symbol        [string] previous symbol annotated in HGNC. If not mapped, "__na"
+entrez_ID          [string] entrez ID cross referenced in HGNC. If not mapped, "__na"
+refseq_ID          [string] refSeq ID cross referenced in HGNC. If not mapped, "__na"
+VEGA_ID            [string] VEGA ID cross referenced in HGNC. If not mapped, "__na"
+UCSC_ID            [string] UCSC ID cross referenced in HGNC. If not mapped, "__na"
+CCDS_ID            [string] CCDS ID cross referenced in HGNC. If not mapped, "__na"
+uniprot_ID         [string] uniprot ID cross referenced in HGNC. If not mapped, "__na"
+homeodb_ID         [string] homeodb ID cross referenced in HGNC. If not mapped, "__na"
+cosmic_ID          [string] cosmic ID cross referenced in HGNC. If not mapped, "__na"
+lncrnadb_ID        [string] lncRNAdb ID cross referenced in HGNC. If not mapped, "__na"
+mirbase_ID         [string] mirbase ID cross referenced in HGNC. If not mapped, "__na"
+snornabase_ID      [string] snornabase ID cross referenced in HGNC. If not mapped, "__na"
+orphanet_ID        [string] orphanet ID cross referenced in HGNC. If not mapped, "__na"
+pseudogene_org_ID  [string] pseudogene.org ID cross referenced in HGNC. If not mapped, "__na"
+avg_exonNum        [flt] average number of exon per transcripts
+max_exonNum        [flt] maximum number of exons in a transcript
+note               [string] notes from Chung's pipeline about cross matching various IDs, warnings etc, if any
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+F6_CAT.gene.info.tsv was created from running,
+
+2016-11-24 21:26
+/Users/chung/Applications/research/perlScripts/FANTOM/pipeline/FANTOM6_CAT_gene_models_generator/v0.1/FANTOM6_CAT_gene_models_generator_v0.1.pl
+--level=lv2_permissive
+--prmtrMode=split
+--CAT_overlay_bed_path=/Users/chung/Applications/research/perlScripts/FANTOM/gene_model/transcriptAssemblyAssigner/v0.1/output/lv1_raw.vs.preF6_target.5end_300.3end_2000.locus_200/bed/lv1_raw_preF6_target_NR.trnscpt.bed
+--CAT_overlay_gene_info_path=/Users/chung/Applications/research/perlScripts/FANTOM/gene_model/transcriptAssemblyAssigner/v0.1/output/lv1_raw.vs.preF6_target.5end_300.3end_2000.locus_200/log/lv1_raw_preF6_target_NR.gene.info.tsv.txt
+--target_CAT_gene_assignment_path=/Users/chung/Applications/research/perlScripts/FANTOM/gene_model/transcriptAssemblyAssigner/v0.1/output/lv1_raw.vs.preF6_target.5end_300.3end_2000.locus_200/log/preF6_target_NR.transcript.refGene.Assignment.info.tsv.txt
+--CAT_gene_info_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM5_CAT/FANTOM_CAT_annotator/CAT_geneBiotyper/FANTOM_CAT.lv1_raw/log/FANTOM_CAT.lv1_raw.gene.info.tsv.gz
+--CAT_transcript_info_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM5_CAT/FANTOM_CAT_annotator/CAT_geneBiotyper/FANTOM_CAT.lv1_raw/log/FANTOM_CAT.lv1_raw.trnscpt.info.tsv.gz
+--DMFB_target_info_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set1_DMFB_with_ZENBU_link/FANTOM6_set1_DMFB_with_ZENBU_link.target_info.tsv
+--DMFB_target_bed_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set1_DMFB_with_ZENBU_link/FANTOM6_set1_DMFB_with_ZENBU_link.target_trnscpt.hg38.bed
+--DMFB_gapmer_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set1_DMFB_with_ZENBU_link/FANTOM6_set1_DMFB_with_ZENBU_link.gapmer_info.with_offTarget.tsv
+--DMFB_sakari_gapmer_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/fibroblast_candidate_select/sakari_gapmer/all_DMFB_sakari_gapmer.info.tsv
+--control_gapmer_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/positve_KD_control/mapping/manual_curated/positive_control_gapmer.order.log.manual_match_F6_CAT.tsv
+--IPSC_target_info_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set2_IPSC_with_ZENBU_link/FANTOM6_set2_IPSC_with_ZENBU_link.target_info.tsv
+--IPSC_target_bed_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set2_IPSC_with_ZENBU_link/FANTOM6_set2_IPSC_with_ZENBU_link.target_trnscpt.hg38.bed
+--IPSC_gapmer_path=/Volumes/LaCie2TB_D/FANTOM/FANTOM6/pre_FANTOM6_final_target_info/FANTOM6_set2_IPSC_with_ZENBU_link/FANTOM6_set2_IPSC_with_ZENBU_link.gapmer_info.with_offTarget.tsv
+--hg38_fasta_path=/Users/chung/Documents/Data/resources/genome/human/inUse/hg38/fasta/hg38.main24chr.chrM.chrom.fa
+--HGNC_info_path=/Users/chung/Documents/Data/resources/genome/human/inUse/gene_annotation/HGNC/hgnc_complete_set.txt
+--outputPrefix=F6_CAT
+--outDir=/Users/chung/Applications/research/perlScripts/FANTOM/pipeline/FANTOM6_CAT_gene_models_generator/v0.1/output
+
