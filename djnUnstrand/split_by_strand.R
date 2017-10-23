@@ -31,7 +31,7 @@ sapply(c('Pos', 'Neg', 'Both'), function(x) {
 ## Usage:
 # qsub djn', x, '_rse.sh 
 
-bash /users/lcollado/R/x86_64-pc-linux-gnu-library/3.3.x/recount.bwtool/extdata/jhpce/run_rse.sh -r "/dcl01/lieber/ajaffe/lab/marchionni_projects/djnUnstrand/djn', x, '/djn', x, '.Rdata" -s "sumsDjn', x, '" -c 1
+bash /users/lcollado/R/x86_64-pc-linux-gnu-library/3.3.x/recount.bwtool/extdata/jhpce/run_rse.sh -r "/dcl01/lieber/ajaffe/lab/marchionni_projects/djnUnstrand/Djn', x, '/Djn', x, '.Rdata" -s "sumsDjn', x, '" -c 1
 ')
     cat(shell, file = paste0('Djn', x, '/djn', x, '_rse.sh'))
 })
