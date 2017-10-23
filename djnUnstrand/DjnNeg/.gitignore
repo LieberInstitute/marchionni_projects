@@ -1,0 +1,13 @@
+## Output files
+sums*
+rse_*.Rdata
+recount-bwtool-commands.txt
+
+## Shell files
+#.recount*.sh
+
+## Other hidden files
+.recount.bwtool
+
+## Log files
+logs
