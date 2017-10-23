@@ -1,12 +1,11 @@
 #!/bin/bash
 #$ -cwd
-#$ -pe local 1
-#$ -l mem_free=2G,h_vmem=3G,h_fsize=100G
+#$ -l bluejay,mem_free=50G,h_vmem=50G,h_fsize=100G
 #$ -N recount-bwtool-single.2017-10-23
 #$ -o /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnBoth/logs/recount-bwtool-single.$TASK_ID.txt
 #$ -e /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnBoth/logs/recount-bwtool-single.$TASK_ID.txt
 #$ -m a
-#$ -t 1-2034
+#$ -t 897
 #$ -tc 100
 #$ -hold_jid recount-bwtool-run.2017-10-23
 echo "**** Job starts ****"
