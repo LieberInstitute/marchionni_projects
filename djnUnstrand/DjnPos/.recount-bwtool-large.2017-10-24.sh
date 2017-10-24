@@ -1,6 +1,7 @@
 #!/bin/bash
 #$ -cwd
-#$ -l bluejay,mem_free=100G,h_vmem=120G,h_fsize=100G
+#$ -pe local 1
+#$ -l mem_free=10G,h_vmem=12G,h_fsize=100G
 #$ -N recount-bwtool-large.2017-10-24
 #$ -o /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnPos/logs/recount-bwtool-large.$TASK_ID.txt
 #$ -e /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnPos/logs/recount-bwtool-large.$TASK_ID.txt
