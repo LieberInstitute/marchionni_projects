@@ -40,19 +40,19 @@ Loading required package: GenomeInfoDb
 Using the following user library: ~/R/x86_64-pc-linux-gnu-library/3.3.x
 Creating script recount-bwtool-commands.2017-10-24
 qsub .recount-bwtool-commands.2017-10-24.sh
-Your job-array 3083365.1-2036:1 ("recount-bwtool-commands.2017-10-24") has been submitted
+Your job-array 3084617.1-2036:1 ("recount-bwtool-commands.2017-10-24") has been submitted
 Creating script recount-bwtool-commandmerge.2017-10-24
 qsub .recount-bwtool-commandmerge.2017-10-24.sh
-Your job 3083366 ("recount-bwtool-commandmerge.2017-10-24") has been submitted
+Your job 3084618 ("recount-bwtool-commandmerge.2017-10-24") has been submitted
 Creating script recount-bwtool-run.2017-10-24
 qsub .recount-bwtool-run.2017-10-24.sh
-Your job-array 3083367.1-70603:1 ("recount-bwtool-run.2017-10-24") has been submitted
+Your job-array 3084619.1-70603:1 ("recount-bwtool-run.2017-10-24") has been submitted
 Creating script recount-bwtool-single.2017-10-24
 qsub .recount-bwtool-single.2017-10-24.sh
-Your job-array 3083368.1-2034:1 ("recount-bwtool-single.2017-10-24") has been submitted
+Your job-array 3084620.1-2034:1 ("recount-bwtool-single.2017-10-24") has been submitted
 Creating script recount-bwtool-large.2017-10-24
 qsub .recount-bwtool-large.2017-10-24.sh
-Your job-array 3083369.2035-2036:1 ("recount-bwtool-large.2017-10-24") has been submitted
+Your job-array 3084621.2035-2036:1 ("recount-bwtool-large.2017-10-24") has been submitted
 Creating script recount-bwtool-merge.2017-10-24
 qsub .recount-bwtool-merge.2017-10-24.sh
-Your job 3083370 ("recount-bwtool-merge.2017-10-24") has been submitted
+Your job 3084622 ("recount-bwtool-merge.2017-10-24") has been submitted
