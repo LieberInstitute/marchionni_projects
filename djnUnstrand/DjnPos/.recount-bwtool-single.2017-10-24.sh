@@ -1,7 +1,6 @@
 #!/bin/bash
 #$ -cwd
-#$ -pe local 1
-#$ -l mem_free=2G,h_vmem=3G,h_fsize=100G
+#$ -l mem_free=15G,h_vmem=15G,h_fsize=100G
 #$ -N recount-bwtool-single.2017-10-24
 #$ -o /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnPos/logs/recount-bwtool-single.$TASK_ID.txt
 #$ -e /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnPos/logs/recount-bwtool-single.$TASK_ID.txt
