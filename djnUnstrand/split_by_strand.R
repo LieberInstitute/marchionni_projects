@@ -8,8 +8,8 @@ tapply(width(djnUnstrandGR), strand(djnUnstrandGR), sum) / 1e6
 #         +         -         *
 # 279.72935 256.28421  78.32475
 
-DjnPos <- djnUnstrandGR[strand(djnUnstrandGR) == '-']
-DjnNeg <- djnUnstrandGR[strand(djnUnstrandGR) == '+']
+DjnPos <- djnUnstrandGR[strand(djnUnstrandGR) == '+']
+DjnNeg <- djnUnstrandGR[strand(djnUnstrandGR) == '-']
 DjnBoth <- djnUnstrandGR[strand(djnUnstrandGR) == '*']
 
 dir.create('DjnPos')
@@ -38,7 +38,7 @@ bash /users/lcollado/R/x86_64-pc-linux-gnu-library/3.3.x/recount.bwtool/extdata/
 
 sessionInfo()
 
-# R version 3.4.1 (2017-06-30)
+# R version 3.4.2 (2017-09-28)
 # Platform: x86_64-apple-darwin15.6.0 (64-bit)
 # Running under: macOS Sierra 10.12.6
 #
@@ -53,7 +53,7 @@ sessionInfo()
 # [1] parallel  stats4    stats     graphics  grDevices utils     datasets  methods   base
 #
 # other attached packages:
-# [1] GenomicRanges_1.29.15 GenomeInfoDb_1.13.5   IRanges_2.11.19       S4Vectors_0.15.12     BiocGenerics_0.23.3
+# [1] GenomicRanges_1.28.6 GenomeInfoDb_1.12.3  IRanges_2.10.5       S4Vectors_0.14.7     BiocGenerics_0.22.1
 #
 # loaded via a namespace (and not attached):
-# [1] zlibbioc_1.23.0         compiler_3.4.1          XVector_0.17.1          GenomeInfoDbData_0.99.1 RCurl_1.95-4.8          bitops_1.0-6
+# [1] zlibbioc_1.22.0         compiler_3.4.2          XVector_0.16.0          GenomeInfoDbData_0.99.0 RCurl_1.95-4.8          bitops_1.0-6
