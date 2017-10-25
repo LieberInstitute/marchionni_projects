@@ -1,6 +1,6 @@
 #!/bin/bash
 #$ -cwd
-#$ -l bluejay,mem_free=150G,h_vmem=150G,h_fsize=100G
+#$ -l mem_free=250G,h_vmem=250G,h_fsize=100G
 #$ -N recount-bwtool-merge.2017-10-23
 #$ -m a
 #$ -o /dcl01/ajaffe/data/lab/marchionni_projects/djnUnstrand/DjnBoth/logs/recount-bwtool-merge.txt
