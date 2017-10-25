@@ -1,7 +1,7 @@
 ## Output files
 sums*
 rse_*.Rdata
-recount-bwtool-commands.txt
+recount-bwtool-commands*.txt
 
 ## Shell files
 #.recount*.sh
