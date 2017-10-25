@@ -1,9 +1,27 @@
 library('GenomicRanges')
 load('disjoinedByunstrand.rda')
 
+## Drop ranges with negative coordinates
+table(start(djnUnstrandGR) > 0)
+#
+# FALSE    TRUE
+#     1 1465429
+## Ranges to remove
+djnUnstrandGR[start(djnUnstrandGR) <= 0]
+# GRanges object with 1 range and 1 metadata column:
+#       seqnames    ranges strand |                               ID
+#          <Rle> <IRanges>  <Rle> |                      <character>
+#   [1]     chrM    [0, 0]      - | FTMT29800000001.C1.E1_0rCQh1joE6
+#   -------
+#   seqinfo: 25 sequences from an unspecified genome; no seqlengths
+
+djnUnstrandGR <- djnUnstrandGR[start(djnUnstrandGR) > 0]
+
+
 table(strand(djnUnstrandGR))
 #      +      -      *
-# 585052 535392 344986
+# 585052 535391 344986
+
 tapply(width(djnUnstrandGR), strand(djnUnstrandGR), sum) / 1e6
 #         +         -         *
 # 279.72935 256.28421  78.32475
@@ -53,7 +71,7 @@ sessionInfo()
 # [1] parallel  stats4    stats     graphics  grDevices utils     datasets  methods   base
 #
 # other attached packages:
-# [1] GenomicRanges_1.28.6 GenomeInfoDb_1.12.3  IRanges_2.10.5       S4Vectors_0.14.7     BiocGenerics_0.22.1
+# [1] GenomicRanges_1.29.15 GenomeInfoDb_1.13.5   IRanges_2.11.19       S4Vectors_0.15.14     BiocGenerics_0.23.4
 #
 # loaded via a namespace (and not attached):
-# [1] zlibbioc_1.22.0         compiler_3.4.2          XVector_0.16.0          GenomeInfoDbData_0.99.0 RCurl_1.95-4.8          bitops_1.0-6
+# [1] zlibbioc_1.23.0         compiler_3.4.2          XVector_0.17.2          GenomeInfoDbData_0.99.1 RCurl_1.95-4.8          bitops_1.0-6
