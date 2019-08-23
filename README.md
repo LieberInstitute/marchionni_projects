@@ -1,4 +1,5 @@
 # marchionni_projects
+[![DOI](https://zenodo.org/badge/82967875.svg)](https://zenodo.org/badge/latestdoi/82967875)
 
 Collaboration with Luigi Marchionni (JHU) and RIKEN with recount data
 
